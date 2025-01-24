@@ -1,0 +1,8 @@
+service b_handle /system/bin/b_handle
+	class core
+	user root
+	oneshot
+	disabled
+
+on property:sys.foregroundapp=*
+	start b_handle

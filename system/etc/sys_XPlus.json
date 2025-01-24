@@ -1,0 +1,18 @@
+{
+	"displayname":"sys_XPlus",
+	"configurations": [
+		{
+			"category":"dummy",
+			"items": [
+				{
+					"name":"dummy",
+					"code":"0x48004000",
+					"value":"0",
+					"valueset": [
+					  "0","1","2","3"
+					]
+				}
+			]
+		}
+	]
+}

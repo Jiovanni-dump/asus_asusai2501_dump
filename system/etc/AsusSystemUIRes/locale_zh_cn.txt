@@ -1,0 +1,8 @@
+﻿[{"wallpaper":"default_slideshow_wallpaper01","title":"霓虹闪烁","description":"牵动着每一个热血的灵魂。​","author":""},
+{"wallpaper":"default_slideshow_wallpaper02","title":"极速狂飙","description":"感受速度的魅力，体验驾驭的乐趣。​","author":""},
+{"wallpaper":"default_slideshow_wallpaper03","title":"极速芯界","description":"芯速无极限，游戏新境界。","author":""},
+{"wallpaper":"default_slideshow_wallpaper04","title":"智能光感​","description":"让空间跃动，开启 AI 新时代。","author":""},
+{"wallpaper":"default_slideshow_wallpaper05","title":"数位梦境","description":"在元宇宙的数位梦境中，体验前所未有的沉浸感。","author":""},
+{"wallpaper":"default_slideshow_wallpaper06","title":"创新时代","description":"智能流动，无处不在。","author":""},
+{"wallpaper":"default_slideshow_wallpaper07","title":"美实兼具","description":"精致洗练的线条，让美学与实用完美结合。","author":""},
+{"wallpaper":"default_slideshow_wallpaper08","title":"斑斓光影","description":"每一场游戏，都是一场视觉盛宴。","author":""}]

@@ -1,0 +1,8 @@
+﻿[{"wallpaper":"default_slideshow_wallpaper01","title":"Neon Flashing","description":"Neon lights illuminate the path forward.","author":""},
+{"wallpaper":"default_slideshow_wallpaper02","title":"Extreme Speed","description":"Feel the excitement of speed and the rush of going fast.","author":""},
+{"wallpaper":"default_slideshow_wallpaper03","title":"Core Speedy​","description":"No speed limits, take it to the next level.​","author":""},
+{"wallpaper":"default_slideshow_wallpaper04","title":"Light Sensing​","description":"Let the space ignite and unveil the new era of AI.","author":""},
+{"wallpaper":"default_slideshow_wallpaper05","title":"Digital Dream","description":"Step into the realm of digital dreams.","author":""},
+{"wallpaper":"default_slideshow_wallpaper06","title":"Innovation Era","description":"Wisdom is flowing and it is everywhere.","author":""},
+{"wallpaper":"default_slideshow_wallpaper07","title":"Beauty & Reality","description":"Exquisite lines blend aesthetics and practicality.","author":""},
+{"wallpaper":"default_slideshow_wallpaper08","title":"Light & Shadow","description":"Balance lies within light and darkness.​","author":""}]

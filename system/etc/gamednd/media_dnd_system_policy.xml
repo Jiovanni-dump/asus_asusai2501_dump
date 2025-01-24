@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<media-dnd-system-policy version="2" >
+    <!-- About toast / overlay window -->
+    <system-allow-floating package="com.asus.calculator"/>
+    <system-allow-floating package="com.asus.gamewidget"/>
+    <system-allow-floating package="com.asus.launcher"/>
+    <system-allow-floating package="com.asus.launcher3"/>
+    <system-allow-floating package="com.asus.mobilemanager"/>
+    <system-allow-floating package="com.asus.screenrecorder"/>
+    <system-allow-floating package="com.asus.taskwidget"/>
+    <system-allow-floating package="com.iflytek.inputmethod.custom"/>
+    <!-- About activity -->
+    <deny-activity component="com.facebook.orca/com.facebook.rtc.activities.WebrtcIncallFragmentHostActivity" media-mode="MEDIA_DND_CALL"/>
+    <deny-activity component="com.facebook.orca/com.facebook.rtc.activities.WebrtcResizeableIncallFragmentHostActivity" media-mode="MEDIA_DND_CALL"/>
+    <deny-activity component="com.kugou.android.ringtone/com.kugou.android.ringtone.vshow.activity.PhoneCallActivity" media-mode="MEDIA_DND_CALL"/>
+    <deny-activity component="com.skype.raider/com.skype.raider.Main" media-mode="MEDIA_DND_CALL"/>
+    <deny-activity component="com.tencent.mm/com.tencent.mm.plugin.voip.ui.VideoActivity" media-mode="MEDIA_DND_CALL"/>
+    <deny-activity component="com.tencent.mobileqq/com.tencent.av.ui.VideoInviteActivity" media-mode="MEDIA_DND_CALL"/>
+    <deny-activity component="com.tencent.mobileqq/com.tencent.av.ui.VideoInviteFull" media-mode="MEDIA_DND_CALL"/>
+    <deny-activity component="com.tencent.mobileqq/com.tencent.av.ui.VChatActivity" media-mode="MEDIA_DND_CALL"/>
+    <deny-activity component="jp.naver.line.android/com.linecorp.voip.ui.base.VoIPServiceActivity" media-mode="MEDIA_DND_CALL"/>
+    <deny-activity component="jp.naver.line.android/jp.naver.line.android.activity.pushdialog.PushDialogActivity" media-mode="MEDIA_DND_NOTIFICATION"/>
+    <deny-activity component="jp.naver.line.android/jp.naver.line.android.activity.pushdialog.PushDialogSleepActivity" media-mode="MEDIA_DND_NOTIFICATION"/>
+    <deny-activity component="com.viber.voip/com.viber.voip.phone.PhoneFragmentActivity" media-mode="MEDIA_DND_CALL"/>
+    <deny-activity component="com.viber.voip/com.viber.voip.WakeUpViberActivity" media-mode="MEDIA_DND_CALL"/>
+    <deny-activity component="com.whatsapp/com.whatsapp.voipcalling.VoipActivityV2" media-mode="MEDIA_DND_CALL"/>
+    <!-- About Sound -->
+    <deny-sound package="com.facebook.orca" usage="USAGE_NOTIFICATION_RINGTONE" media-mode="MEDIA_DND_CALL"/>
+    <deny-sound package="com.tencent.mobileqq" usage="USAGE_UNKNOWN" media-mode="MEDIA_DND_NOTIFICATION | MEDIA_DND_CALL"/>
+    <deny-sound package="jp.naver.line.android" usage="USAGE_NOTIFICATION_RINGTONE" media-mode="MEDIA_DND_CALL"/>
+    <!-- About vibration -->
+    <deny-vibration package="com.facebook.orca" usage="USAGE_UNKNOWN" media-mode="MEDIA_DND_CALL"/>
+    <deny-vibration package="com.facebook.orca" usage="USAGE_NOTIFICATION" media-mode="MEDIA_DND_CALL"/>
+    <deny-vibration package="com.facebook.orca" usage="USAGE_NOTIFICATION_RINGTONE" media-mode="MEDIA_DND_CALL"/>
+    <deny-vibration package="com.skype.raider" usage="USAGE_UNKNOWN" media-mode="MEDIA_DND_CALL"/>
+    <deny-vibration package="com.tencent.mm" usage="USAGE_UNKNOWN" media-mode="MEDIA_DND_CALL"/>
+    <deny-vibration package="com.tencent.mobileqq" usage="USAGE_UNKNOWN" media-mode="MEDIA_DND_NOTIFICATION | MEDIA_DND_CALL"/>
+    <deny-vibration package="com.whatsapp" usage="USAGE_UNKNOWN" media-mode="MEDIA_DND_CALL"/>
+    <deny-vibration package="jp.naver.line.android" usage="USAGE_UNKNOWN" media-mode="MEDIA_DND_CALL"/>
+    <deny-vibration package="jp.naver.line.android" usage="USAGE_NOTIFICATION_RINGTONE" media-mode="MEDIA_DND_CALL"/>
+</media-dnd-system-policy>

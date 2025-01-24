@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2015 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<favorites>
+
+    <!-- screen [1] -->
+
+    <appwidget
+        className="com.asus.weatherwidget.WeatherWidgetProviderPhone"
+        packageName="com.asus.weatherwidget"
+        screen="0"
+        spanX="4"
+        spanY="2"
+        x="0"
+        y="0" />
+
+    <favorite
+	className="com.tencent.southpole.appstore.activity.SplashActivity"
+        packageName="com.tencent.southpole.appstore"
+		screen="0"
+        x="0"
+        y="5" />
+
+    <favorite
+	className="com.asus.gamecenter.GameCenterActivity"
+        packageName="com.asus.gamecenter"
+        screen="0"
+        x="1"
+        y="5" />
+
+   <favorite
+	className="com.asus.deskclock.DeskClock"
+        packageName="com.asus.deskclock"
+        screen="0"
+        x="2"
+        y="5" />
+
+   <favorite
+	className="com.asus.gallery.app.EPhotoActivity"
+        packageName="com.asus.gallery"
+        screen="0"
+        x="3"
+        y="5" />
+	<appwidget
+        className="com.android.settings.launcherwidget.BatteryWidget"
+        packageName="com.android.settings"
+        screen="1"
+        spanX="1"
+        spanY="2"
+        x="0"
+        y="0" />	
+	<appwidget
+        className="com.android.settings.launcherwidget.FramerateWidgetProvider2"
+        packageName="com.android.settings"
+        screen="1"
+        spanX="1"
+        spanY="2"
+        x="1"
+        y="0" />	
+	<appwidget
+        className="com.asus.gamecenter.appwidget.FanControlWidget"
+        packageName="com.asus.gamecenter"
+        screen="1"
+        spanX="2"
+        spanY="2"
+        x="2"
+        y="0" />	
+		
+
+   <favorite
+	className="com.android.settings.Settings"
+        packageName="com.android.settings"
+        screen="1"
+        x="0"
+        y="2" />		
+   <favorite
+	className="com.asus.filemanager.activity.FileManagerActivity"
+        packageName="com.asus.filemanager"
+        screen="1"
+        x="1"
+        y="2" />
+		
+   <favorite
+	className="com.futuredial.asusdatatransfer.DefaultLauncherActivity"
+        packageName="com.futuredial.asusdatatransfer"
+        screen="1"
+        x="2"
+        y="2" />
+		
+	<folder
+        screen="1"
+        x="3"
+        y="2"
+        title="系统工具" >
+        <favorite
+            className="com.android.contacts.activities.PeopleActivity"
+            packageName="com.asus.contacts" />
+		<favorite
+            className="com.asus.soundrecorder.AsusRecorder"
+			packageName="com.asus.soundrecorder" />
+        <favorite
+            className="com.tencent.southpole.note.activity.NoteListActivity"
+            packageName="com.tencent.southpole.note" />
+        <favorite
+            className="com.asus.tips.TipListActivity"
+	    packageName="com.asus.tips" />
+        <favorite
+            className="com.asus.smartcalendar.HomeActivity"
+            packageName="com.asus.smartcalendar" />
+        <favorite
+            className="com.moji.mjweather.LauncherActivity"
+            packageName="com.moji.tencent.weather" />
+        <favorite
+            className="com.asus.glidex.MainActivity"
+            packageName="com.asus.glidex" />
+        <favorite
+            className="com.android.stk.StkMain"
+            packageName="com.android.stk" />
+    </folder>
+
+	<folder
+        screen="1"
+        x="0"
+        y="3"
+        title="recommended game folder" >
+	</folder>
+
+	<favorite
+		className="com.asus.calculator.Calculator"
+        packageName="com.asus.calculator"
+        screen="1"
+        x="1"
+        y="3" />
+
+	<favorite
+		className="com.zhiyicx.thinksnsplus.modules.guide.GuideActivity"
+        packageName="com.asus.rogforum"
+        screen="1"
+        x="2"
+        y="3" />
+	<shortcut
+        className="com.zhiyicx.thinksnsplus.modules.theme.ThemeMainActivity"
+        packageName="com.asus.rogforum"
+        shortcutId="theme"
+        screen="1"
+        x="3"
+        y="3" />
+	<favorite
+        className="com.sina.weibo.SplashActivity"
+	    packageName="com.sina.weibo"
+        screen="1"
+        x="0"
+        y="4" />
+    <favorite
+        className="com.asus.nfccard.activity.WelcomeNfcSplashActivity"
+        packageName="com.asus.nfccard"
+        screen="1"
+        x="1"
+        y="4" />
+    <favorite
+        className="com.asus.voiceassist.apphome.HomeActivity"
+        packageName="com.asus.voiceassist"
+        screen="1"
+        x="2"
+	y="4" />
+    <favorite
+        className="com.macacagames.ROG9AniMe.MacacaMainActivity"
+        packageName="com.macacagames.ROG9AniMe"
+        screen="1"
+        x="3"
+        y="4" />
+
+    <!-- Hotseat (We use the screen as the position of the item in the hotseat) -->
+
+    <!-- Phone -->
+    <favorite
+        className="com.android.contacts.activities.DialtactsActivity"
+        packageName="com.asus.dialer"
+        container="-101"
+        screen="0"
+        x="0"
+        y="0" />
+
+    <!-- Messaging -->
+    <favorite
+        className="com.android.mms.ui.ConversationList"
+        packageName="com.asus.cnmessage"
+        container="-101"
+        screen="1"
+        x="1"
+        y="0" />
+
+    <!-- AppStore -->
+    <favorite
+        className="com.opera.android.OperaStartActivity"
+        packageName="com.android.browser"
+        container="-101"
+        screen="2"
+        x="2"
+        y="0" />
+
+    <!-- Camera -->
+    <favorite
+        className="com.asus.camera.CameraApp"
+        packageName="com.asus.camera"
+        container="-101"
+        screen="3"
+        x="3"
+        y="0" />
+</favorites>

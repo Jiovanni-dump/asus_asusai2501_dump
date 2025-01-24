@@ -1,0 +1,14 @@
+service AsusSocketMonitor /system/bin/AsusSocketMonitor
+    class main
+    user root
+    group root
+    seclabel u:r:AsusSocketMonitor:s0
+
+on property:sys.boot_completed=1
+    start AsusSocketMonitor
+
+on property:sys.asus.socket_monitor=1
+    restart AsusSocketMonitor
+
+on property:sys.asus.socket_monitor=0
+    stop AsusSocketMonitor

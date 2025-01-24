@@ -1,0 +1,8 @@
+﻿[{"wallpaper":"default_slideshow_wallpaper01","title":"霓虹閃爍​","description":"牽動著每一個熱血的靈魂。​","author":""},
+{"wallpaper":"default_slideshow_wallpaper02","title":"極速狂飆​","description":"感受速度的魅力，體驗駕馭的樂趣。​","author":""},
+{"wallpaper":"default_slideshow_wallpaper03","title":"極速芯界","description":"芯速無極限，遊戲新境界。","author":""},
+{"wallpaper":"default_slideshow_wallpaper04","title":"智慧光感​","description":"讓空間躍動，開啟 AI 新時代。","author":""},
+{"wallpaper":"default_slideshow_wallpaper05","title":"數位夢境","description":"在元宇宙的數位夢境中，體驗前所未有的沉浸感。","author":""},
+{"wallpaper":"default_slideshow_wallpaper06","title":"創新時代","description":"智慧流動，無處不在。","author":""},
+{"wallpaper":"default_slideshow_wallpaper07","title":"美實兼具","description":"精緻洗練的線條，讓美學與實用完美結合。","author":""},
+{"wallpaper":"default_slideshow_wallpaper08","title":"斑斕光影","description":"每一場遊戲，都是一場視覺盛宴。","author":""}]
