@@ -1,0 +1,3 @@
+ro.product.device_for_attestation=ASUSAI2501
+ro.product.manufacturer_for_attestation=asus
+ro.vendor.qti.va_odm.support=1

@@ -1,0 +1,16 @@
+product/priv-app/GmsCore/GmsCore.apk.xz
+product/priv-app/Messages/Messages.apk.xz
+product/etc/models/ai_whisper/encoder_model_htp.bin.xz
+product/app/TrichromeLibrary64/TrichromeLibrary64.apk.xz
+product/app/YouTube/YouTube.apk.xz
+product/app/Gmail2/Gmail2.apk.xz
+product/app/AniMePlay/AniMePlay.apk.xz
+product/app/Maps/Maps.apk.xz
+product/app/Photos/Photos.apk.xz
+system/priv-app/OCR/OCR.apk.xz
+system/priv-app/SemanticService/SemanticService.apk.xz
+system/priv-app/InstantTranslationService/InstantTranslationService.apk.xz
+system/app/NextAppCore/NextAppCore.apk.xz
+recovery.img.xz
+bootRE/boot.elf.xz
+vendor/etc/camera/vidhance.lic.xz
