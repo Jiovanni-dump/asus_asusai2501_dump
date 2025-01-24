@@ -1,0 +1,6 @@
+
+service vendor.asus.miniled /vendor/bin/hw/vendor.asus.hardware.miniled.service
+    interface aidl vendor.asus.hardware.miniled/default
+    class hal
+    user system
+    group system

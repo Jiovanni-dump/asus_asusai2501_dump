@@ -1,0 +1,7 @@
+wlcstatus=`cat /sys/class/asuslib/wlc_ic_status`
+	
+if [ "$wlcstatus" -eq "0" ]; then
+    echo 0
+elif [ "$wlcstatus" -eq "1" ]; then
+    echo 1	
+fi

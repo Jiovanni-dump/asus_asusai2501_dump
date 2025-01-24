@@ -1,0 +1,5 @@
+ro.product.vendor.name=TJAI2501s
+ro.vendor.build.fingerprint=asus/TJAI2501s/ASUSAI2501:15/AQ3A.240829.003/35.1810.1810.220-0:user/release-keys
+ro.vendor.build.fota.version=TJAI2501s-35.1810.1810.220-0
+ro.product.vendor.model=ASUSAI2501B
+ro.product.model_for_attestation=ASUSAI2501B

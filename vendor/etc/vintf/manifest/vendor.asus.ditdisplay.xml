@@ -1,0 +1,10 @@
+<!--
+    Input:
+        vendor/asus/AI2501/dit_display/interfaces/aidl/default/vendor.asus.ditdisplay.xml
+-->
+<manifest version="8.0" type="device">
+    <hal format="aidl">
+        <name>vendor.asus.ditdisplay</name>
+        <fqname>IDITDisplayInterface/default</fqname>
+    </hal>
+</manifest>

@@ -1,0 +1,17 @@
+service vendor.display-ditconfig /vendor/bin/hw/vendor.asus.ditdisplay-service
+    class hal
+    user system
+    group graphics drmrpc
+    capabilities SYS_NICE
+
+on property:vendor.display.charlie_test=*
+    start vendor.display-ditconfig
+	
+on property:sys.boot_completed=1
+    chmod 644 /vendor/lib64/display/DIT12Config2.fw
+    copy /vendor/lib64/display/DIT12Config2.fw /data/vendor/display/DIT12Config2.fw
+    chmod 0755 /data/vendor/display/DIT12Config2.fw
+	chmod 644 /vendor/etc/DITConfig_Param.json
+    copy /vendor/etc/DITConfig_Param.json  /data/vendor/display/DITConfig_Param.json
+    chmod 0666 /data/vendor/display/DITConfig_Param.json
+	

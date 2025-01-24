@@ -1,0 +1,188 @@
+#!/vendor/bin/sh
+
+helpFunction()
+{
+   echo ""
+   echo "Usage: $0"
+   echo -e "\t-a [ATTESTATION] adb shell asuskey_install_tool -a"
+   echo -e "\t-d [WFD]         adb shell asuskey_install_tool -d"
+   echo -e "\t-e [DPHDCP]      adb shell asuskey_install_tool -e"
+   echo -e "\t-f [DPHDCP2]     adb shell asuskey_install_tool -f"
+   echo -e "\t-k [WIDEVINE]    adb shell asuskey_install_tool -k"
+   echo -e "\t-s [STRONGBOX_RSA]   adb shell asuskey_install_tool -s"
+   echo -e "\t-t [STRONGBOX_AES]   adb shell asuskey_install_tool -t"
+   exit 1 # Exit script after printing help
+}
+
+InstallAKey()
+{
+n=1
+result="FAIL"
+
+if [ "$1" == "RSA" ]; then
+	echo "Use RSA decrypt keybox"
+	RSA_decrypt="Y"
+else
+	echo "Not use RSA decrypt keybox"
+	RSA_decrypt="N"
+fi
+
+# Generate key
+if [ ! -e "/data/AI2501.attestation.secure" ]; then
+	echo $result
+	return
+else
+	if [ "$RSA_decrypt" == "N" ]; then
+		/vendor/bin/asusCA -a
+		if [ ! -e "/data/key.xml" ]; then
+			result="FAIL AKEY mismatch"
+			echo $result
+			return
+		fi
+	elif [ "$RSA_decrypt" == "Y" ]; then
+		/vendor/bin/asusCA -a
+		if [ ! -e "/data/key.xml" ]; then
+			result="FAIL AKEY mismatch"
+			echo $result
+			return
+		fi
+	else
+		echo "RSA_decrypt = $RSA_decrypt, error!!"
+		echo $result
+		return
+	fi
+fi
+
+while [ $n -le 5 ]; do
+	# clear key status
+	setprop vendor.atd.keymaster.ready FALSE
+	setprop vendor.debug.check.keybox 0
+	rm -rf /mnt/vendor/persist/data/DdHdV*
+	rm -rf /mnt/vendor/persist/data/TJq45N*
+	rm -f /data/asuskey.log
+
+	# start dec_key
+	if [ -n "$2" ]; then
+		echo "/vendor/bin/install_akey_server rog9prov $2"
+		/vendor/bin/install_akey_server rog9prov "$2" > /data/asuskey.log 2>&1
+	else
+		echo "/vendor/bin/install_akey_server rog9prov"
+		/vendor/bin/install_akey_server rog9prov > /data/asuskey.log 2>&1
+	fi
+
+	sleep 1
+	Km=`getprop vendor.atd.keymaster.ready`
+	echo "getprop vendor.atd.keymaster.ready $Km"
+	sleep 1
+	if [ $Km == "TRUE" ]; then
+		result="PASS"
+		/vendor/bin/asusCA -acs
+		break
+	fi
+
+	n=$(( n+1 ))
+done
+
+echo $result
+}
+
+if [ -n "$2" ]; then
+	echo "IMEI1 as keybox serial number."
+	export IMEI1="$2"
+else
+	echo "IMEI1 not keybox serial number."
+	export IMEI1=""
+fi
+
+while getopts ":adefkst" opt
+do
+   case "$opt" in
+      a ) 
+          echo "A Key install"
+          InstallAKey AES
+          ;;
+      d ) 
+          echo "D Key install"
+          /vendor/bin/hdcp_key_install HDCPK
+          sleep 1
+          rm /data/AI2401_dxhdcp.bin.secure
+          Dk=`getprop vendor.atd.hdcp.ready`
+          sleep 1
+          if [ "$Dk" == "TRUE" ]; then
+                 echo "PASS"
+                 break
+          else
+                 echo "FAIL"
+                 break
+          fi
+          ;;
+      e ) 
+          echo "E Key install"
+          /vendor/bin/hdcp_key_install HDCP1
+          sleep 1
+          rm /mnt/vendor/persist/DPS_hdcp1
+          rm /mnt/vendor/persist/hdcp1.pem
+          rm /data/AI2401_hdcp1.pem.secure
+          Ek=`getprop vendor.atd.hdcp1.ready`
+          sleep 1
+          if [ "$Ek" == "TRUE" ]; then
+                 echo "PASS"
+                 break
+          else
+                 echo "FAIL"
+                 break
+          fi
+          ;;
+      f ) 
+          echo "F Key install"
+          /vendor/bin/hdcp_key_install H2P2K
+          sleep 1
+          rm /mnt/vendor/persist/DPS_hdcp2
+          rm /mnt/vendor/persist/h2p2.pem
+          rm /data/AI2401_hdcp2p2.pem.secure
+          Fk=`getprop vendor.atd.hdcp2p2.ready`
+          sleep 1
+          if [ "$Fk" == "TRUE" ]; then
+                 echo "PASS"
+                 break
+          else
+                 echo "FAIL"
+                 break
+          fi
+          ;;
+      k ) 
+          echo "W Key install"
+          /vendor/bin/asusCA -k
+          sleep 1
+          ret=`getprop vendor.atd.keybox.install`
+          sleep 1
+          if [ "$ret" == "-2" ]; then
+                 echo "CHECKSUM FAIL"
+                 break
+          elif [ "$ret" != "0" ]; then
+                 echo "FAIL $ret"
+                 break
+          fi
+          /vendor/bin/asusCA -v
+          sleep 1
+          Wv=`getprop vendor.atd.keybox.ready`
+          sleep 1
+          if [ "$Wv" == "TRUE" ]; then
+                 echo "PASS"
+                 break
+          else
+                 echo "FAIL"
+                 break
+          fi
+          ;;
+      s ) 
+          echo "Strongbox A Key install by RAS decrypt"
+          InstallAKey RAS "$IMEI1"
+          ;;
+      t ) 
+          echo "Strongbox A Key install by AES decrypt"
+          InstallAKey AES "$IMEI1"
+          ;;
+      ? ) helpFunction ;; # Print helpFunction in case parameter is non-existent
+   esac
+done

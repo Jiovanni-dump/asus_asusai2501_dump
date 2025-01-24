@@ -1,0 +1,10 @@
+<!--
+    Input:
+        vendor/asus/AI2501/MiniLed/aidl/default/vendor.asus.hardware.miniled.service.xml
+-->
+<manifest version="8.0" type="device">
+    <hal format="aidl">
+        <name>vendor.asus.hardware.miniled</name>
+        <fqname>IMiniled/default</fqname>
+    </hal>
+</manifest>

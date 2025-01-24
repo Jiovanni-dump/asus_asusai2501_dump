@@ -1,0 +1,50 @@
+
+service vibcali_ship /vendor/bin/sh /vendor/bin/VibCali_ship.sh
+    user root
+    group root
+    oneshot
+    disabled
+
+service Vib_efuse_get /vendor/bin/sh /vendor/bin/Vib_efuse_get.sh
+    user root
+    group root
+    oneshot
+    disabled
+
+
+on property:ro.boot.ftm=1 && property:sys.boot_completed=1 && property:vendor.atd.symlink.ready=1
+    symlink /vendor/bin/VibratorTest /data/data/VibratorTest
+    symlink /vendor/bin/VibCali /data/data/VibCali
+    symlink /vendor/bin/Vib_efuse_get.sh /data/data/Vib_efuse_get.sh
+    chown system system /mnt/vendor/persist/aw_efuse.bin
+    chown system system /mnt/vendor/persist/aw_cali.bin
+    chmod 0664 /sys/class/leds/aw_vibrator/efuse
+    chmod 0664 /sys/class/leds/aw_vibrator/cali
+    chown system shell /sys/class/leds/aw_vibrator/efuse
+    chown system shell /sys/class/leds/aw_vibrator/cali
+    chown system system /mnt/vendor/persist/aw_rtp_cali.bin
+    chmod 0664 /sys/class/leds/aw_vibrator/osc_cali
+    chown system shell /sys/class/leds/aw_vibrator/osc_cali
+    write /dev/kmsg "[haptic] start Vib_efuse_get"
+    start Vib_efuse_get
+
+on property:debug.vendor.vib.cali=0
+    write /dev/kmsg "[haptic] end ship calibration"
+
+on property:debug.vendor.vib.cali=1
+    chown system system /mnt/vendor/persist/aw_efuse.bin
+    chown system system /mnt/vendor/persist/aw_cali.bin
+    chmod 0664 /sys/class/leds/aw_vibrator/efuse
+    chmod 0664 /sys/class/leds/aw_vibrator/cali
+    chown system shell /sys/class/leds/aw_vibrator/efuse
+    chown system shell /sys/class/leds/aw_vibrator/cali
+    chown system system /mnt/vendor/persist/aw_rtp_cali.bin
+    chmod 0664 /sys/class/leds/aw_vibrator/osc_cali
+    chown system shell /sys/class/leds/aw_vibrator/osc_cali
+    write /dev/kmsg "[haptic] start ship calibration"
+    start vibcali_ship
+    start Vib_efuse_get
+
+on property:vendor.vib.cali.state=*
+    setprop debug.vendor.vib.cali.state ${vendor.vib.cali.state}
+    

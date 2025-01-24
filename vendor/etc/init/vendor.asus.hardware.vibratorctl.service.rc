@@ -1,0 +1,6 @@
+
+service vendor.asus.vibratorctl /vendor/bin/hw/vendor.asus.hardware.vibratorctl.service
+    interface aidl default
+    class hal
+    user system
+    group system

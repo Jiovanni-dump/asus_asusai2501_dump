@@ -1,0 +1,5 @@
+ro.product.vendor.name=WWAI2501s
+ro.vendor.build.fingerprint=asus/WWAI2501s/ASUSAI2501:15/AQ3A.240829.003/35.1810.1810.220-0:user/release-keys
+ro.vendor.build.fota.version=WWAI2501s-35.1810.1810.220-0
+ro.product.vendor.model=ASUSAI2501C
+ro.product.model_for_attestation=ASUSAI2501C

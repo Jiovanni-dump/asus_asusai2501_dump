@@ -1,0 +1,20 @@
+{
+    "ProjectID": 2501,
+    "INDEX_UseCaseID": 1,
+    "Switch": 1,
+    "FOD_Switch":0,
+    "Debug_Level": 1,
+    "SelectFW120": 0,
+    "SelectFW144": 0,
+    "Current_Frequency": 120,
+    "Current_Splendid": 4,
+    "Max_Nit": 2047,
+    "Min_Nit": 255,
+    "Current_Brightness": 2047,
+    "DC_dimming_Switch": 1,
+    "Current_DC_Gain": 4095,
+    "DC_dimming_Threshold": 591,
+	"DC_dimming_BitDepth":16,
+	"lutpt":[63,80,96,112,140,160,239,417,591],
+	"lutvalue":[247,244,233,218,201,186,154,120,100]
+}

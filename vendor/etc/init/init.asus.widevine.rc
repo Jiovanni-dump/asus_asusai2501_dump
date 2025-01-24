@@ -1,0 +1,19 @@
+# ASUS BSP Display +++
+service vendor.widevine /vendor/bin/sh /vendor/bin/is_keybox_valid.sh
+    class late_start
+    user root
+    group root media mediadrm drmrpc system log
+    disabled
+    seclabel u:r:is_keybox_valid:s0
+    oneshot
+
+on property:sys.boot_completed=1
+    start vendor.widevine
+
+on post-fs
+    # ASUS_BSP Widevine +++
+    rm 2024-04-30_platform_RSA_SM8750_license_4ed9dd35-33c7-4fa4-9ebf-89dd87306ec4.pfm.inst
+    copy /vendor/etc/wvlic.pfm /mnt/vendor/persist/data/pfm/licenses/2024-04-30_platform_RSA_SM8750_license_4ed9dd35-33c7-4fa4-9ebf-89dd87306ec4.pfm
+    chmod 0664 /mnt/vendor/persist/data/pfm/licenses/2024-04-30_platform_RSA_SM8750_license_4ed9dd35-33c7-4fa4-9ebf-89dd87306ec4.pfm
+    chown system system /mnt/vendor/persist/data/pfm/licenses/2024-04-30_platform_RSA_SM8750_license_4ed9dd35-33c7-4fa4-9ebf-89dd87306ec4.pfm
+    # ASUS_BSP Widevine ---

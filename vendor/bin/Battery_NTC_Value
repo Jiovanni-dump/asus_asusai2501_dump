@@ -1,0 +1,30 @@
+sleep 2
+
+if [ -n "$1" ]; then
+	export CMD=$1
+else
+	echo "Please enter Battery ID parameter!"
+	exit
+fi
+
+if [ "$CMD" -eq "0" ]; then
+	i=0
+	while [ $i -lt 5 ]
+	do
+		result=`cat /sys/class/power_supply/battery/temp`
+
+		if [ "$result" -gt "0" ]; then
+			echo `expr $((result/10))`
+			exit
+		fi
+
+		i=$(($i+1))
+		sleep 2
+	done
+	echo `expr $((result/10))`
+
+elif [ "$CMD" -eq "1" ]; then
+	result=`cat /sys/class/asuslib/asus_get_batt_temp`
+	echo `expr $((result))`
+
+fi

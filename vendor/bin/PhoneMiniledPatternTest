@@ -1,0 +1,70 @@
+#!/vendor/bin/sh
+if [ -n "$1" ]; then
+        export CMD=$1
+        export val=$2
+else
+        echo "CMD not assigned !"
+        echo "===== Entry ====="
+        echo " 0 (Off), 1 (Square), 2 (Triangle), 3 (Diamond), 6 {brightness} (show spefic brightness)"
+        echo ""
+        echo "=====  Pro  ====="
+        echo " 0 (Off), 1 (show 1), 2 (show 2), 3 (show 3), 4 (show 4), 5 (show 5), 6 {brightness} (show spefic brightness)"
+        exit
+fi
+
+if [ "$CMD" -lt "0" -o "$CMD" -gt "6" ]; then
+        echo "===== Entry ====="
+        echo " 0 (Off), 1 (Square), 2 (Triangle), 3 (Diamond), 6 {brightness} (show spefic brightness)"
+        echo ""
+        echo "=====  Pro  ====="
+        echo " 0 (Off), 1 (show 1), 2 (show 2), 3 (show 3), 4 (show 4), 5 (show 5), 6 {brightness} (show spefic brightness)"
+        exit
+fi
+
+LGF_ID=`cat /sys/class/leds/miniled/PD6`
+
+if [ "$LGF_ID" == "0x1" ]; then  # Entry
+	if [ "$CMD" -eq "0" ]; then
+			echo 0 >  /sys/class/leds/miniled/tmp_pattern
+			echo 255 >  /sys/class/leds/miniled/test
+			echo PASS
+	elif [ "$CMD" -eq "1" ]; then
+			echo 1 >  /sys/class/leds/miniled/test
+			echo PASS
+	elif [ "$CMD" -eq "2" ]; then
+			echo 2 >  /sys/class/leds/miniled/test
+			echo PASS
+	elif [ "$CMD" -eq "3" ]; then
+			echo 3 >  /sys/class/leds/miniled/test
+			echo PASS
+	elif [ "$CMD" -eq "6" ]; then
+			echo $val >  /sys/class/leds/miniled/tmp_pattern
+			echo 255 >  /sys/class/leds/miniled/test
+			echo PASS
+	fi
+else
+	if [ "$CMD" -eq "0" ]; then # Pro
+			echo 0 >  /sys/class/leds/miniled/tmp_pattern
+			echo 255 >  /sys/class/leds/miniled/test
+			echo PASS
+	elif [ "$CMD" -eq "1" ]; then
+			echo 1 >  /sys/class/leds/miniled/test
+			echo PASS
+	elif [ "$CMD" -eq "2" ]; then
+			echo 2 >  /sys/class/leds/miniled/test
+			echo PASS
+	elif [ "$CMD" -eq "3" ]; then
+			echo 3 >  /sys/class/leds/miniled/test
+			echo PASS
+	elif [ "$CMD" -eq "4" ]; then
+			echo 4 >  /sys/class/leds/miniled/test
+			echo PASS
+	elif [ "$CMD" -eq "5" ]; then
+			echo 5 >  /sys/class/leds/miniled/test
+			echo PASS
+	elif [ "$CMD" -eq "6" ]; then
+			echo $val >  /sys/class/leds/miniled/tmp_pattern
+			echo 255 >  /sys/class/leds/miniled/test
+			echo PASS
+	fi
+fi

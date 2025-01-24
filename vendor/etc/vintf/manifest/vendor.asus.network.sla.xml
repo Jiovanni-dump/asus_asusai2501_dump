@@ -1,0 +1,10 @@
+<!--
+    Input:
+        vendor/asus/AsusNetworkServices/hardware/interfaces/sla/aidl/default/hal/vendor.asus.network.sla.xml
+-->
+<manifest version="8.0" type="device">
+    <hal format="aidl">
+        <name>vendor.asus.network.sla</name>
+        <fqname>ISlaService/default</fqname>
+    </hal>
+</manifest>

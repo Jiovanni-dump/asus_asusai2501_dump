@@ -1,0 +1,7 @@
+wlc_fw_version=`cat /sys/class/asuslib/wlc_nu1628_read_fw`
+
+if [ "$wlc_fw_version" == "0x206" ]; then
+	echo PASS#$wlc_fw_version#0x206
+else
+	echo FAIL#$wlc_fw_version#0x206
+fi

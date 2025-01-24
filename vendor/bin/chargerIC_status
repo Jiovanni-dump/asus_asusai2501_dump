@@ -1,0 +1,12 @@
+if [ -f "/sys/class/asuslib/asus_get_smb139x_status" ]; then
+    status=`cat /sys/class/asuslib/asus_get_smb139x_status`
+    if [ "$status" -eq "1" ]; then
+        echo 1
+    else
+        echo 0
+    fi
+else
+    echo 0
+fi
+
+

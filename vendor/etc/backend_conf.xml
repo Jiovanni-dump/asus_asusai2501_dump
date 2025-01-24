@@ -1,0 +1,6 @@
+<config>
+    <device name="CODEC_DMA-LPAIF_RXTX-RX-0" rate="48000" ch="2" bits="16" />
+    <device name="CODEC_DMA-LPAIF_RXTX-TX-3" rate="48000" ch="1" bits="16" />
+    <device name="MI2S-LPAIF_VA-RX-PRIMARY" rate="48000" ch="2" bits="16" />
+    <device name="MI2S-LPAIF_WSA-RX-PRIMARY" rate="48000" ch="2" bits="16" />
+</config>

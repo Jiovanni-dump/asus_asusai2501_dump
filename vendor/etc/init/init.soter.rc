@@ -1,0 +1,18 @@
+#
+# rc file for soter service
+#
+
+on property:sys.boot_completed=1
+    symlink /vendor/bin/vendor.qti.hardware.soter-provision /data/data/SOTER
+    chmod 0777 /data/data/SOTER
+    chmod 0777 /dev/qseecom
+
+service verify_soter /vendor/bin/verify_soter.sh
+    class core
+    oneshot
+    seclabel u:r:asus_soter:s0
+    disabled
+
+on property:sys.boot_completed=1
+    start verify_soter
+

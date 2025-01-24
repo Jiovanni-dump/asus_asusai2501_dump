@@ -1,0 +1,54 @@
+prjid=`getprop ro.boot.id.prj`
+vbus=`cat /sys/class/asuslib/vbus_side_btm`
+if [ "$prjid" -ne "2" ]; then
+	if [ "$vbus" -ne "1" ]; then
+		echo None
+		exit
+	fi
+fi
+
+chgtype=`cat /sys/class/asuslib/get_charging_source_type`
+
+echo 0x290B > /d/regmap/0-07/address
+echo 1 > /d/regmap/0-07/count
+qctype=`cat /d/regmap/0-07/data`
+bctype=`cat /sys/class/asuslib/get_usb_type`
+
+echo CHG_TYPE_now: vbus=$vbus, chgtype=$chgtype, qctype=$qctype, bctype=$bctype > /dev/kmsg 
+
+if [ "$chgtype" == "1" ]; then
+	echo PD_PPS_65W
+	echo CHG_TYPE_now: PD_PPS_65W > /dev/kmsg 
+elif [ "$chgtype" == "2" ]; then
+	echo PD_PPS_30W
+	echo CHG_TYPE_now: PD_PPS_30W > /dev/kmsg 
+elif [ "$chgtype" == "3" ]; then
+	echo PD_ASUS_BTM_Charger
+	echo CHG_TYPE_now: PD_ASUS_BTM_Charger > /dev/kmsg 
+elif [ "$chgtype" == "4" ]; then
+	echo PD_PPS_65W
+	echo CHG_TYPE_now: PD_PPS_65W > /dev/kmsg 
+elif [ "$chgtype" == "5" ]; then
+	echo PD_PPS_30W
+	echo CHG_TYPE_now: PD_PPS_30W > /dev/kmsg 
+elif [ "$chgtype" == "6" ]; then
+	echo PD_ASUS_SIDE_Charger
+	echo CHG_TYPE_now: PD_ASUS_SIDE_Charger > /dev/kmsg 
+elif [ "$chgtype" == "7" ]; then
+	echo PD_PPS_65W
+	echo CHG_TYPE_now: PD_PPS_65W > /dev/kmsg 
+elif [ "$chgtype" == "8" ]; then
+	echo PD_PPS_30W
+	echo CHG_TYPE_now: PD_PPS_30W > /dev/kmsg 
+elif [ "$qctype" == "290b: 48" ]; then
+	echo HVDCP3
+	echo CHG_TYPE_now: HVDCP3 > /dev/kmsg 
+else
+	if [ "$bctype" == "Unknown" ]; then
+		echo None
+		echo CHG_TYPE_now: None > /dev/kmsg 
+	else
+		echo "$bctype"
+		echo CHG_TYPE_now: "$bctype" > /dev/kmsg 
+	fi
+fi

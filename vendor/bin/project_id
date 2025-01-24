@@ -1,0 +1,24 @@
+#!/system/bin/sh
+
+PROP_STAGE=$(getprop ro.boot.id.stage)
+PROP_PROJECT=$(getprop ro.boot.id.prj)
+PROP_LGF_CON_ID_2=$(getprop ro.boot.id.lgf_con_2)
+
+case $PROP_PROJECT in
+	"0" | "1" )
+		if [ "$PROP_LGF_CON_ID_2" -eq "0" ]; then
+			echo AI2501_Chicago_Entry
+		elif [ "$PROP_LGF_CON_ID_2" -eq "1" ]; then
+			echo AI2501_Chicago_Pro
+		else
+			echo Unknown
+		fi
+		;;
+	"2" )
+		echo AI2501_Hawaii
+		;;
+	 *  )
+		echo Unknown
+		;;
+esac
+

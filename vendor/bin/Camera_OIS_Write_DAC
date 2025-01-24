@@ -1,0 +1,122 @@
+#!/system/bin/sh
+
+
+REG="/proc/driver/vcm_ic_rw" #for G2066 VCM
+REG_ADDR1="0x03"
+REG_ADDR2="0x04"
+
+STATE="/proc/driver/vcm_enable"
+REG_cam3="/proc/driver/actuator_i2c_rw"
+
+
+#+++++++ Config  +++++++
+DEBUG=1
+Distance_DAC=$2
+Camera_Dir=$1
+Parameter_num=$#
+
+#echo "CHHO Distance_DAC=$Distance_DAC  Camera_Dir=$Camera_Dir  Parameter_num=$Parameter_num"
+
+#------- Config  -------
+
+
+function Check_vcm_parameter()
+{
+	#echo "Check_vcm_parameter()"
+
+	#check the number of parameter
+	if [ $Parameter_num -ne 2 ]; then
+		echo "Usage: adb shell $0 DAC_VALUE (Decimal, 0~2046)"
+		echo "Params num: $Parameter_num"
+		exit 1
+	fi
+
+	#check distance value
+	#distance value =END => allow AF move lens
+	if [ "$Distance_DAC" = "END" -o "$Distance_DAC" = "end" ]; then
+		af_movable=$(cat $STATE)
+		if [ $af_movable -eq 0 ]; then
+			#allow AF move lens
+			echo 1 > $STATE
+			[ $DEBUG -eq 1 ] && echo "allow AF move lens"
+		else
+			[ $DEBUG -eq 1 ] && echo "AF can move lens already"
+		fi
+		exit 1
+	fi
+
+	if ! grep -Eq "^[0-9]+$" <<< $Distance_DAC; then
+		echo "Please input decimal value!"
+		exit 1
+	fi
+
+	if [ $Distance_DAC -gt 2046 -o $Distance_DAC -lt 0 ]; then
+		echo "DAC value invalid! Range is [1,2046]"
+		exit 1
+	fi
+}
+
+function Check_vcm_move_able()
+{
+	#echo "Check_vcm_move_able()"
+
+	#disallow AF move lens
+	af_movable=$(cat $STATE)
+	if [ $af_movable -eq 1 ]; then
+		echo 0 > $STATE
+		[ $DEBUG -eq 1 ] && echo "first, disallow AF move lens"
+	fi
+}
+
+
+
+function write_dac()
+{
+	#echo "write_dac()"
+
+	case $Camera_Dir in
+	0)
+		Camera_id=0
+		REG_ADDR="0x03"
+	;;
+	4)
+		Camera_id=3
+		REG_ADDR="0xD013"
+	;;
+	*)
+		echo "Camera_OIS_Write_DAC CameraDir DAC"
+		echo "CameraDir"
+		echo "0: Back camera, 2:Back camera2, 4:Back camera3"
+		echo "1: Front camera, 3:Front camera2"
+	;;
+	esac
+	[ $DEBUG -eq 1 ] && echo "Camera_id "$Camera_id "REG_ADDR " $REG_ADDR
+
+
+	# Translator the distance to HEX from DAC
+	hex=$(printf "%04x" $Distance_DAC)
+	[ $DEBUG -eq 1 ] && echo "CHHO convert $Distance_DAC to $hex"
+	set_value=0x$hex
+
+	#imx890 reg_addr 0x03, s5kjd1sm 0xD013
+	if [ $REG_ADDR = "0x03" ]; then
+		echo $REG_ADDR1 $REG_ADDR2 $set_value > $REG #dword, kernel write at once
+	fi
+	if [ $REG_ADDR = "0xD013" ]; then
+		[ $DEBUG -eq 1 ] && echo $REG_ADDR 0x2 $set_value $Camera_id >  $REG_cam3
+		echo $REG_ADDR 0x2 $set_value $Camera_id > $REG_cam3 #word, kernel write at once
+	fi
+	#[ $DEBUG -eq 1 ] && echo $REG_ADDR 0x2 $set_value $Camera_id >  $REG_cam3
+	#echo $REG_ADDR 0x2 $set_value $Camera_id > $REG_cam3 #word, kernel write at once
+
+}
+
+# +++++++++ main function +++++++++
+
+Check_vcm_parameter
+Check_vcm_move_able
+write_dac
+
+# --------- main function ---------
+
+

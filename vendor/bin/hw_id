@@ -1,0 +1,52 @@
+#!/system/bin/sh
+
+PROP_STAGE=$(getprop ro.boot.id.stage)
+PROP_PROJECT=$(getprop ro.boot.id.prj)
+
+if [ "$PROP_PROJECT" -eq "2" ]; then #Hawaii
+	case $PROP_STAGE in
+		"3" )
+			echo SR
+			;;
+		"4" )
+			echo ER
+			;;
+		"5" )
+			echo PR
+			;;
+		"7" )
+			echo MP
+			;;
+		*)
+			echo Unknown
+			;;
+	esac
+else #Chicago
+	case $PROP_STAGE in
+		"0" )
+			echo EVB
+			;;
+		"1" )
+			echo SR1
+			;;
+		"2" )
+			echo SR2
+			;;
+		"3" )
+			echo ER1
+			;;
+		"4" )
+			echo ER2
+			;;
+		"5" )
+			echo PR
+			;;
+		"7" )
+			echo MP
+			;;
+		*)
+			echo Unknown
+			;;
+	esac
+fi
+
