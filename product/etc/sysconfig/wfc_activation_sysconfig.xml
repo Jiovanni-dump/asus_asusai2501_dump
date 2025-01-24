@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <!-- Allow background operation in battery saver mode for CrossDeviceServices-->
+    <allow-in-power-save-except-idle package="com.google.android.wfcactivation" />
+</config>
