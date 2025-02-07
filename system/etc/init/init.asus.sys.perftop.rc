@@ -1,0 +1,10 @@
+service perftop /system/bin/sh /system/bin/perftop.sh
+    seclabel u:r:dumpstate:s0
+    user root
+    group root
+    task_profiles CPUSET_SP_SYSTEM
+    oneshot
+    disabled
+
+on property:vendor.asus.perftop=1
+    start perftop

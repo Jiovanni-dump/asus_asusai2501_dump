@@ -1,0 +1,225 @@
+
+on property:vendor.factory.adbon=1
+    copy /vendor/factory/adbkey.pub /data/misc/adb/adb_keys
+    chown system shell /data/misc/adb/adb_keys
+    chmod 0640 /data/misc/adb/adb_keys
+
+# ASUS_BSP USBH +++
+on property:sys.asus.usb.Inbox_enable=*	
+	setprop vendor.asus.usb.Inbox_enable ${sys.asus.usb.Inbox_enable}
+
+on property:sys.asus.donglestate_GV_PD=*
+    setprop vendor.asus.donglestate_GV_PD ${sys.asus.donglestate_GV_PD}
+
+on property:sys.asus.usb.speed=*	
+	setprop vendor.asus.usb.speed ${sys.asus.usb.speed}
+# ASUS_BSP USBH ---
+
+# ASUS_BSP Paul +++
+on property:vendor.audio.eu.parameters=*
+    setprop sys.audio.eu.parameters ${vendor.audio.eu.parameters}
+
+on property:vendor.audio.calibration=0
+    setprop sys.audio.calibration 0
+
+on property:sys.audio.calibration=1
+    setprop vendor.audio.calibration 1
+    start audio_amp_cal
+
+on property:vendor.asus.autofota=1
+    setprop persist.sys.boot_sound.autofota 1
+    setprop vendor.asus.autofota 2
+
+on property:vendor.audio.output.selected=*
+    setprop sys.audio.output.selected ${vendor.audio.output.selected}
+    start audio_woofer_test
+
+on property:sys.audio.csc.spkrcv.ampmute=*
+    start audio_woofer_test
+
+on property:sys.audio.woofer.reactivate=1
+    setprop vendor.audio.woofer.enabled 0
+    setprop vendor.audio.woofer.enabled 1
+# ASUS_BSP Paul ---
+
+# For falling record
+on property:persist.sys.asus.motorservice.dumprecord=*
+	setprop persist.vendor.asus.motorservice.dumprecord ${persist.sys.asus.motorservice.dumprecord}
+on property:persist.sys.asus.motorservice.fallingTrigger=*
+	setprop persist.vendor.asus.motorservice.fallingTrigger ${persist.sys.asus.motorservice.fallingTrigger}
+on property:persist.sys.asus.motorservice.fallingtime=*
+	setprop persist.vendor.asus.motorservice.fallingtime ${persist.sys.asus.motorservice.fallingtime}
+on property:persist.sys.asus.motorservice.hitTrigger=*
+	setprop persist.vendor.asus.motorservice.hitTrigger ${persist.sys.asus.motorservice.hitTrigger}
+on property:persist.sys.asus.motorservice.hitime=*
+	setprop persist.vendor.asus.motorservice.hitime ${persist.sys.asus.motorservice.hitime}
+on property:persist.sys.asus.motorservice.thumpTrigger=*
+	setprop persist.vendor.asus.motorservice.thumpTrigger ${persist.sys.asus.motorservice.thumpTrigger}
+on property:persist.sys.asus.motorservice.thumptime=*
+	setprop persist.vendor.asus.motorservice.thumptime ${persist.sys.asus.motorservice.thumptime}
+
+# For ACCY dongle type
+on property:vendor.asus.dongletype=*
+	setprop sys.asus.dongletype ${vendor.asus.dongletype}
+
+on property:vendor.asus.fan_pjid=*
+	setprop sys.asus.fan_pjid ${vendor.asus.fan_pjid}
+	
+# For inbox fan +++
+on property:persist.sys.asus.userfan=*
+	setprop persist.vendor.asus.userfan ${persist.sys.asus.userfan:-1}
+
+on property:sys.asus.thermalfan=*
+	setprop vendor.asus.thermalfan ${sys.asus.thermalfan:-1}
+
+on property:persist.sys.asus.micfansettings=*
+	setprop persist.vendor.asus.micfansettings ${persist.sys.asus.micfansettings:-1}
+
+on property:sys.asus.fan.mic=*
+	setprop vendor.asus.fan.mic ${sys.asus.fan.mic:-1}
+
+on property:persist.sys.asus.tempfan=*
+	setprop persist.vendor.asus.tempfan ${persist.sys.asus.tempfan:-1}
+
+on property:vendor.fan.rpm=*
+	setprop sys.fan.rpm ${vendor.fan.rpm:0}
+
+on property:persist.sys.asus.userfanrpm=*
+	setprop persist.vendor.asus.userfanrpm ${persist.sys.asus.userfanrpm:-1}
+
+on property:persist.sys.asus.coolerstage=*
+	setprop persist.vendor.asus.coolerstage ${persist.sys.asus.coolerstage:-1}
+
+on property:persist.sys.asus.coolerstage_csc=*
+	setprop persist.vendor.asus.coolerstage_csc ${persist.sys.asus.coolerstage_csc:-1}
+# For inbox fan ---
+
+# For inbox8 FW update +++
+on property:vendor.fandg8.pd_fwupdate=0
+	setprop sys.fandg8.pd_fwupdate 0
+on property:vendor.fandg8.pd_fwupdate=2
+	setprop sys.fandg8.pd_fwupdate 2
+
+on property:vendor.fandg8.2led_fwupdate=0
+	setprop sys.fandg8.2led_fwupdate 0
+on property:vendor.fandg8.2led_fwupdate=2
+	setprop sys.fandg8.2led_fwupdate 2
+# For inbox8 FW update ---
+
+# For inbox9 FW update +++
+on property:vendor.fandg9.pd_fwupdate=0
+	setprop sys.fandg9.pd_fwupdate 0
+on property:vendor.fandg9.pd_fwupdate=2
+	setprop sys.fandg9.pd_fwupdate 2
+
+on property:vendor.fandg9.2led_fwupdate=0
+	setprop sys.fandg9.2led_fwupdate 0
+on property:vendor.fandg9.2led_fwupdate=2
+	setprop sys.fandg9.2led_fwupdate 2
+# For inbox9 FW update ---
+
+# For inbox FW update +++
+on property:vendor.fandg.aura_fwupdate=0
+	setprop sys.fandg.aura_fwupdate 0
+on property:vendor.fandg.aura_fwupdate=2
+	setprop sys.fandg.aura_fwupdate 2
+
+on property:vendor.fandg.mcu_fwupdate=0
+	setprop sys.fandg.mcu_fwupdate 0
+on property:vendor.fandg.mcu_fwupdate=2
+	setprop sys.fandg.mcu_fwupdate 2
+
+on property:vendor.fandg.pd_fwupdate=0
+	setprop sys.fandg.pd_fwupdate 0
+on property:vendor.fandg.pd_fwupdate=2
+	setprop sys.fandg.pd_fwupdate 2
+
+on property:vendor.fandg.pd_update_progress=*
+	setprop sys.fandg.pd_update_progress ${vendor.fandg.pd_update_progress:-1}
+# For inbox FW update ---
+
+on property:vendor.inbox.aura_fwver=*
+	setprop sys.inbox.aura_fwver ${vendor.inbox.aura_fwver:-1}
+on property:vendor.inbox.inbox_fwver=*
+	setprop sys.inbox.inbox_fwver ${vendor.inbox.inbox_fwver:-1}
+on property:vendor.inbox.pd_fwver=*
+	setprop sys.inbox.pd_fwver ${vendor.inbox.pd_fwver:-1}
+on property:vendor.oem.asus.inboxid=*
+	setprop sys.oem.asus.inboxid ${vendor.oem.asus.inboxid:-1}
+
+on property:vendor.asusfw.fandg6.inbox_fwver=*
+	setprop sys.asusfw.fandg6.inbox_fwver ${vendor.asusfw.fandg6.inbox_fwver:-1}
+on property:vendor.asusfw.fandg6.aura_fwver=*
+	setprop sys.asusfw.fandg6.aura_fwver ${vendor.asusfw.fandg6.aura_fwver:-1}
+on property:vendor.asusfw.fandg6.pd_fwver=*
+	setprop sys.asusfw.fandg6.pd_fwver ${vendor.asusfw.fandg6.pd_fwver:-1}
+	
+on property:vendor.inbox8.2led_fwver=*
+	setprop sys.inbox8.2led_fwver ${vendor.inbox8.2led_fwver:-1}
+on property:vendor.inbox8.pd_fwver=*
+	setprop sys.inbox8.pd_fwver ${vendor.inbox8.pd_fwver:-1}
+
+on property:vendor.asusfw.fandg8.2led_fwver=*
+	setprop sys.asusfw.fandg8.2led_fwver ${vendor.asusfw.fandg8.2led_fwver:-1}
+on property:vendor.asusfw.fandg8.pd_fwver=*
+	setprop sys.asusfw.fandg8.pd_fwver ${vendor.asusfw.fandg8.pd_fwver:-1}
+
+on property:vendor.inbox9.2led_fwver=*
+	setprop sys.inbox9.2led_fwver ${vendor.inbox9.2led_fwver:-1}
+on property:vendor.inbox9.pd_fwver=*
+	setprop sys.inbox9.pd_fwver ${vendor.inbox9.pd_fwver:-1}
+
+on property:vendor.asusfw.fandg9.2led_fwver=*
+	setprop sys.asusfw.fandg9.2led_fwver ${vendor.asusfw.fandg9.2led_fwver:-1}
+on property:vendor.asusfw.fandg9.pd_fwver=*
+	setprop sys.asusfw.fandg9.pd_fwver ${vendor.asusfw.fandg9.pd_fwver:-1}
+# For ACCY FW status +++
+on property:vendor.asus.accy.fw_status=*
+	setprop sys.asus.accy.fw_status ${vendor.asus.accy.fw_status}
+on property:vendor.asus.accy.fw_status2=*
+	setprop sys.asus.accy.fw_status2 ${vendor.asus.accy.fw_status2}
+on property:vendor.asus.accy.fw_status3=*
+	setprop sys.asus.accy.fw_status3 ${vendor.asus.accy.fw_status3}
+on property:vendor.asus.accy.fw_status4=*
+	setprop sys.asus.accy.fw_status4 ${vendor.asus.accy.fw_status4}
+
+# For ACCY FW status ---
+
+# For GamePad  +++
+on property:vendor.asus.gamepadtype=*
+	setprop sys.asus.gamepadtype ${vendor.asus.gamepadtype}
+
+on property:vendor.gu200a_left_fwver=*
+	setprop sys.gu200a_left_fwver ${vendor.gu200a_left_fwver:-1}
+
+on property:vendor.gu200a_right_fwver=*
+	setprop sys.gu200a_right_fwver ${vendor.gu200a_right_fwver:-1}
+
+# For GamePad  ---
+
+# ASUS_BSP jack +++
+on property:sys.foregroundapp=*
+	setprop vendor.foreground.app ${sys.foregroundapp}
+
+on property:sys.foregroundact=*
+	setprop vendor.foreground.act ${sys.foregroundact}
+	
+on property:sys.asusconfigupdater.policy_cdn_version.csv=*
+	setprop vendor.asus.perf.policycdn ${sys.asusconfigupdater.policy_cdn_version.csv}
+	
+# ASUS_BSP jack ----
+
+
+# ASUS_BSP Beryl +++
+on property:ro.product.system.brand=*
+    setprop vendor.audio.system.brand ${ro.product.system.brand}
+    setprop sys.audio.system.brand ${ro.product.system.brand}
+# ASUS_BSP Beryl ---
+
+# ASUS BSP Display +++
+on property:vendor.asus.gamingtype=*
+	setprop sys.asus.gamingtype ${vendor.asus.gamingtype}
+
+on property:sys.debug.hdcp=*
+	setprop vendor.debug.hdcp ${sys.debug.hdcp}
+# ASUS BSP Display ---

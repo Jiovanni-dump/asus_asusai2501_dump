@@ -1,0 +1,14 @@
+service Asus80211Monitor /system/bin/Asus80211Monitor
+    class main
+    user root
+    group root
+    seclabel u:r:Asus80211Monitor:s0
+
+on property:sys.boot_completed=1
+    start Asus80211Monitor
+
+on property:sys.asus.socket_monitor=1
+    restart Asus80211Monitor
+
+on property:sys.asus.socket_monitor=0
+    stop Asus80211Monitor

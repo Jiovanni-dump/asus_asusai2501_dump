@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2024 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+ -->
+
+<!--
+This XML defines an allowlist for packages that want to join a particular shared-uid.
+If a non-system package that is signed with platform signature, is trying to join a particular
+shared-uid, and not in this list, the installation will fail.
+
+- The "package" XML attribute refers to the app's package name.
+- The "shareduid" XML attribute refers to the shared uid name.
+
+Example usage
+    1. <allow-package-shareduid package="com.example.app" shareduid="android.uid.system"/>
+        Indicates that a package - com.example.app, will be able to join android.uid.system.
+    2. <allow-package-shareduid package="oem.example.app" shareduid="oem.uid.custom"/>
+        Indicates that a package - oem.example.app, will be able to join oem.uid.custom.
+-->
+
+<config>
+    <allow-package-shareduid package="android.test.settings" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.asus.logtool" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.asus.wifistresstest" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.asus.ril.phonestt" shareduid="android.uid.phone" />
+    <allow-package-shareduid package="com.asus.atd.devicecheck" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.asus.atd.aging" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.asus.atd.reboot" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.asus.atd.batterytest" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.asus.at.cameratest" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.asus.atd.systemmodetest" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.asus.atd.atd_safetynetchecker" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.asus.at.cpuandmemorycontroller" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.asus.atd.nfctesttool" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.asus.at.airplanemodetest" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.asus.at.emmctester" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.asus.atd.gsienableadb" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.asus.atd.monkeyuploadtool" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.asus.at" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.asus.autoanswer" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.asus.atd.cameravideofpstest" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.asus.atd.fpstool" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.asus.at.uiautomatortest" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.asus.atd.testrecordupload" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.asus.nfctool" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.goodix.fingerprint.producttest" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.asus.stresstest" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.asus.atd.cscunderdisplaypsensorcaltest" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.asus.atd.lockbattery" shareduid="android.uid.system" />
+    <allow-package-shareduid package="com.asus.atd.touchstability" shareduid="android.uid.system" />
+</config>

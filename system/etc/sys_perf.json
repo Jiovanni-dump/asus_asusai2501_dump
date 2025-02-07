@@ -1,0 +1,127 @@
+{
+	"displayname":"Performance",
+	"configurations": [
+		{
+			"category":"Temperature",
+			"items": [
+				{
+					"name":"Temperature",
+					"code":"0x48000000",
+					"value":"8",
+					"valueset": [
+					  "0","3","4","5","6"
+					]
+				}
+			]
+		},
+		{
+			"category":"CPU",
+			"items": [
+				{
+					"name":"MPCTLV3_SCHED_BUSY_HYSTERSIS_CPU_MASK",
+					"code":"0x40C74000",
+					"value":"255",
+					"valueset": [
+					  "1","0"
+					]
+				},
+				{
+					"name":"MPCTLV3_BUS_DCVS_DDR_LAT_MINFREQ_GOLD",
+					"code":"0x43488000",
+					"value":"1353000",
+					"valueset": [
+					  "1","0"
+					]
+				},
+				{
+					"name":"MPCTLV3_WALT_ADAPTIVE_HIGH_FREQ_BIG",
+					"code":"0x4080C000",
+					"value":"3628800",
+					"valueset": [
+					  "1","0"
+					]
+				},
+				{
+					"name":"MPCTLV3_WALT_ADAPTIVE_HIGH_FREQ_PRIME",
+					"code":"0x4080C200",
+					"value":"4377600",
+					"valueset": [
+					  "1","0"
+					]
+				},
+				{
+					"name":"MPCTLV3_WALT_ADAPTIVE_LOW_FREQ_BIG",
+					"code":"0x40808000",
+					"value":"2748800",
+					"valueset": [
+					  "1","0"
+					]
+				},
+				{
+					"name":"MPCTLV3_WALT_ADAPTIVE_LOW_FREQ_PRIME",
+					"code":"0x40808200",
+					"value":"3017600",
+					"valueset": [
+					  "1","0"
+					]
+				},
+				{
+					"name":"MPCTLV3_BUS_DCVS_DDR_LAT_MINFREQ_GOLD",
+					"code":"0x43488000",
+					"value":"4761000",
+					"valueset": [
+					  "1","0"
+					]
+				},
+				{
+					"name":"MPCTLV3_SCHED_BUSY_HYSTERSIS_CPU_MASK",
+					"code":"0x40C74000",
+					"value":"255",
+					"valueset": [
+					  "1","0"
+					]
+				},
+				{
+					"name":"MPCTLV3_CPU_LLCC_BW_MAX_FREQ_V2",
+					"code":"0x41848000",
+					"value":"1211000",
+					"valueset": [
+					  "1","0"
+					]
+				},
+				{
+					"name":"MPCTLV3_CPU_LLCC_BW_MIN_FREQ_V2",
+					"code":"0x41844000",
+					"value":"1211000",
+					"valueset": [
+					  "1","0"
+					]
+				},
+				{
+					"name":"MPCTLV3_LPM_BIAS_HYST",
+					"code":"0x40408000",
+					"value":"99",
+					"valueset": [
+					  "1","0"
+					]
+				},
+				{
+					"name":"MPCTLV3_GPU_DISABLE_GPU_NAP",
+					"code":"0X4281C000",
+					"value":"2000",
+					"valueset": [
+					  "1","0"
+					]
+				},
+				{
+					"name":"MPCTLV3_STORAGE_CLK_SCALING_DISABLE",
+					"code":"0x42C10000",
+					"value":"1",
+					"valueset": [
+					  "1","0"
+					]
+				}
+			]
+		}
+	]
+}

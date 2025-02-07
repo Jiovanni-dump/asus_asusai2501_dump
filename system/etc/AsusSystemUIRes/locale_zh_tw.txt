@@ -1,0 +1,8 @@
+﻿[{"wallpaper":"default_slideshow_wallpaper01","title":"清新海","description":"碧波蕩漾的海水，清澈見底。​","author":""},
+{"wallpaper":"default_slideshow_wallpaper02","title":"智慧藍","description":"人工智慧蘊藏著無盡的奧祕。​","author":""},
+{"wallpaper":"default_slideshow_wallpaper03","title":"綿延綠","description":"在綿延的山丘上，尋找內心最深處的平靜。","author":""},
+{"wallpaper":"default_slideshow_wallpaper04","title":"撒哈拉","description":"我的心，在一望無際的撒哈啦。","author":""},
+{"wallpaper":"default_slideshow_wallpaper05","title":"碧藍湖","description":"體驗純淨的自然觸感。","author":""},
+{"wallpaper":"default_slideshow_wallpaper06","title":"渲染紅","description":"夕陽餘暉，將大地染成了一幅絢麗的油畫。","author":""},
+{"wallpaper":"default_slideshow_wallpaper07","title":"光與影","description":"光影交織，智慧綻放。","author":""},
+{"wallpaper":"default_slideshow_wallpaper08","title":"叢林綠","description":"感受大自然最純粹的清新。","author":""}]

@@ -1,0 +1,55 @@
+{
+	"displayname":"sys durable",
+	"configurations": [
+		{
+			"category":"Temperature",
+			"items": [
+				{
+					"name":"Temperature",
+					"code":"0x48000000",
+					"value":"0",
+					"valueset": [
+					  "0","99"
+					]
+				},
+				{
+					"name":"CPUSET_FOREGROUND",
+					"code":"0x40C40000",
+					"value":"63",
+					"valueset": [
+					  "20","30","40","50","60","70","80"
+					]
+				}
+			]
+		},
+		{
+			"category":"CPU",
+			"items": [
+				{
+					"name":"TOPAPP_UCLAMP_MAX",
+					"code":"0x4801C000",
+					"value":"60",
+					"valueset": [
+					  "20","30","40","50","60","70","80"
+					]
+				},
+				{
+					"name":"/sys/kernel/msm_performance/parameters/cpu_max_freq 2-4",
+					"code":"0x40804000",
+					"value":"2227",
+					"valueset": [
+						"614", "844", "1075", "1401", "1708", "2035", "2361", "2668", "2956"
+					]
+				},
+				{
+					"name":"/sys/kernel/msm_performance/parameters/cpu_max_freq 7",
+					"code":"0x40804200",
+					"value":"2438",
+					"valueset": [
+						"672", "902", "1248", "1593", "1939", "2246", "2534",  "2841", "3110"
+					]
+				}
+			]
+		}
+	]
+}

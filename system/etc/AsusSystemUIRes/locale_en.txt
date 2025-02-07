@@ -1,0 +1,8 @@
+﻿[{"wallpaper":"default_slideshow_wallpaper01","title":"Fresh Sea","description":"The blue ripples of the water are crystal clear.","author":""},
+{"wallpaper":"default_slideshow_wallpaper02","title":"Wisdom Blue","description":"The mysteries of artificial intelligence are endless.","author":""},
+{"wallpaper":"default_slideshow_wallpaper03","title":"Stretching Green​","description":"In the rolling hills, you can find inner peace.","author":""},
+{"wallpaper":"default_slideshow_wallpaper04","title":"Sahara Desert","description":"My heart is in the endless Sahara.","author":""},
+{"wallpaper":"default_slideshow_wallpaper05","title":"Blue Lake","description":"Find serenity and embrace tranquility.","author":""},
+{"wallpaper":"default_slideshow_wallpaper06","title":"Render Red","description":"Sunset afterglow turns Earth into a beautiful oil painting.","author":""},
+{"wallpaper":"default_slideshow_wallpaper07","title":"Light & Shadow","description":"Wisdom blossoms as light and shadow intertwine.","author":""},
+{"wallpaper":"default_slideshow_wallpaper08","title":"Jungle Green","description":"A taste of the absolute beauty of nature.","author":""}]
