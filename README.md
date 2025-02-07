@@ -1,0 +1,14 @@
+# qssi_64-user 15 AQ3A.240829.003 35.1810.1810.243-0 release-keys
+- manufacturer: asus
+- platform: sun
+- codename: ASUSAI2501
+- flavor: qssi_64-user
+- release: 15
+- id: AQ3A.240829.003
+- incremental: 35.1810.1810.243-0
+- tags: release-keys
+- fingerprint: asus/ZWWAI2501/ASUSAI2501:15/AQ3A.240829.003/35.1810.1810.243-0:user/release-keys
+- is_ab: true
+- brand: asus
+- branch: qssi_64-user-15-AQ3A.240829.003-35.1810.1810.243-0-release-keys
+- repo: asus_asusai2501_dump
