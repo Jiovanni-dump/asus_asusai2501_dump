@@ -1,0 +1,26 @@
+<!--
+    Input:
+        device/qcom/sun/manifest_sun.xml
+        vendor/asus/AI2501/ifaa/vendor/default/manifest_ifaa.xml
+-->
+<manifest version="8.0" type="device" target-level="202404">
+    <hal format="aidl">
+        <name>android.hardware.gatekeeper</name>
+        <fqname>IGatekeeper/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>android.hardware.nfc</name>
+        <fqname>INfc/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.goodix.hardware.biometrics.fingerprint</name>
+        <fqname>IGoodixFingerprintDaemon/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.microtrust.hardware.ifaa</name>
+        <fqname>IIFAADevice/default</fqname>
+    </hal>
+    <sepolicy>
+        <version>202404</version>
+    </sepolicy>
+</manifest>

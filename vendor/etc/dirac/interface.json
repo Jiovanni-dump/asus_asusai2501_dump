@@ -1,0 +1,2897 @@
+{
+ "archiveMetaData": {},
+ "author": "thomas.boden@dirac.com",
+ "configurations": [
+  {
+   "name": "MUSIC",
+   "numInputs": 2,
+   "numOutputs": 2,
+   "parameters": [
+    {
+     "default": 30,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 5
+     },
+     "max": 30,
+     "min": 0,
+     "name": "Volume Control",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "step"
+    },
+    {
+     "default": 1,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 1
+     },
+     "max": 3,
+     "min": 0,
+     "name": "Rotation",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 256
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 1",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 257
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 2",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 258
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 3",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 259
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 4",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 260
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 5",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 261
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 6",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 262
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 7",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 263
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 8",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 264
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 9",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 265
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 10",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%.2f",
+     "id": {
+      "id": 268435470
+     },
+     "max": 1,
+     "min": -1,
+     "name": "Bass Shelf",
+     "stepSize": 0,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%.2f",
+     "id": {
+      "id": 268435471
+     },
+     "max": 1,
+     "min": -1,
+     "name": "Treble Shelf",
+     "stepSize": 0,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 268435477
+     },
+     "max": 1,
+     "min": 0,
+     "name": "WooferEQ",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_TOGGLE",
+     "unit": ""
+    }
+   ],
+   "rtCoreVersion": {
+    "majorVersion": 2,
+    "minorVersion": 1,
+    "patchVersion": 1
+   },
+   "signalChainMetaData": {
+    "bypass_gain_db": {
+     "stringValue": "0"
+    },
+    "bypass_gain_lin": {
+     "stringValue": "1"
+    },
+    "group_id": {
+     "stringValue": "0"
+    },
+    "output_type": {
+     "stringValue": "speaker"
+    },
+    "stream_type": {
+     "stringValue": "normal"
+    }
+   }
+  },
+  {
+   "name": "MUSIC_SS",
+   "numInputs": 2,
+   "numOutputs": 2,
+   "parameters": [
+    {
+     "default": 30,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 5
+     },
+     "max": 30,
+     "min": 0,
+     "name": "Volume Control",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "step"
+    },
+    {
+     "default": 1,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 1
+     },
+     "max": 3,
+     "min": 0,
+     "name": "Rotation",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 256
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 1",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 257
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 2",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 258
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 3",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 259
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 4",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 260
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 5",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 261
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 6",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 262
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 7",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 263
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 8",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 264
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 9",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 265
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 10",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%.2f",
+     "id": {
+      "id": 268435470
+     },
+     "max": 1,
+     "min": -1,
+     "name": "Bass Shelf",
+     "stepSize": 0,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%.2f",
+     "id": {
+      "id": 268435471
+     },
+     "max": 1,
+     "min": -1,
+     "name": "Treble Shelf",
+     "stepSize": 0,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 268435477
+     },
+     "max": 1,
+     "min": 0,
+     "name": "WooferEQ",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_TOGGLE",
+     "unit": ""
+    }
+   ],
+   "rtCoreVersion": {
+    "majorVersion": 2,
+    "minorVersion": 1,
+    "patchVersion": 1
+   },
+   "signalChainMetaData": {
+    "bypass_gain_db": {
+     "stringValue": "0"
+    },
+    "bypass_gain_lin": {
+     "stringValue": "1"
+    },
+    "group_id": {
+     "stringValue": "2"
+    },
+    "output_type": {
+     "stringValue": "speaker"
+    },
+    "stream_type": {
+     "stringValue": "system"
+    }
+   }
+  },
+  {
+   "name": "MOVIE",
+   "numInputs": 2,
+   "numOutputs": 2,
+   "parameters": [
+    {
+     "default": 30,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 5
+     },
+     "max": 30,
+     "min": 0,
+     "name": "Volume Control",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "step"
+    },
+    {
+     "default": 1,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 1
+     },
+     "max": 3,
+     "min": 0,
+     "name": "Rotation",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 256
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 1",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 257
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 2",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 258
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 3",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 259
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 4",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 260
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 5",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 261
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 6",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 262
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 7",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 263
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 8",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 264
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 9",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 265
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 10",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%.2f",
+     "id": {
+      "id": 268435470
+     },
+     "max": 1,
+     "min": -1,
+     "name": "Bass Shelf",
+     "stepSize": 0,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%.2f",
+     "id": {
+      "id": 268435471
+     },
+     "max": 1,
+     "min": -1,
+     "name": "Treble Shelf",
+     "stepSize": 0,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 268435477
+     },
+     "max": 1,
+     "min": 0,
+     "name": "WooferEQ",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_TOGGLE",
+     "unit": ""
+    }
+   ],
+   "rtCoreVersion": {
+    "majorVersion": 2,
+    "minorVersion": 1,
+    "patchVersion": 1
+   },
+   "signalChainMetaData": {
+    "bypass_gain_db": {
+     "stringValue": "0"
+    },
+    "bypass_gain_lin": {
+     "stringValue": "1"
+    },
+    "group_id": {
+     "stringValue": "0"
+    },
+    "output_type": {
+     "stringValue": "speaker"
+    },
+    "stream_type": {
+     "stringValue": "normal"
+    }
+   }
+  },
+  {
+   "name": "MOVIE_SS",
+   "numInputs": 2,
+   "numOutputs": 2,
+   "parameters": [
+    {
+     "default": 30,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 5
+     },
+     "max": 30,
+     "min": 0,
+     "name": "Volume Control",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "step"
+    },
+    {
+     "default": 1,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 1
+     },
+     "max": 3,
+     "min": 0,
+     "name": "Rotation",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 256
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 1",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 257
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 2",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 258
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 3",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 259
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 4",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 260
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 5",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 261
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 6",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 262
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 7",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 263
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 8",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 264
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 9",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 265
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 10",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%.2f",
+     "id": {
+      "id": 268435470
+     },
+     "max": 1,
+     "min": -1,
+     "name": "Bass Shelf",
+     "stepSize": 0,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%.2f",
+     "id": {
+      "id": 268435471
+     },
+     "max": 1,
+     "min": -1,
+     "name": "Treble Shelf",
+     "stepSize": 0,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 268435477
+     },
+     "max": 1,
+     "min": 0,
+     "name": "WooferEQ",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_TOGGLE",
+     "unit": ""
+    }
+   ],
+   "rtCoreVersion": {
+    "majorVersion": 2,
+    "minorVersion": 1,
+    "patchVersion": 1
+   },
+   "signalChainMetaData": {
+    "bypass_gain_db": {
+     "stringValue": "0"
+    },
+    "bypass_gain_lin": {
+     "stringValue": "1"
+    },
+    "group_id": {
+     "stringValue": "2"
+    },
+    "output_type": {
+     "stringValue": "speaker"
+    },
+    "stream_type": {
+     "stringValue": "system"
+    }
+   }
+  },
+  {
+   "name": "GAME",
+   "numInputs": 2,
+   "numOutputs": 2,
+   "parameters": [
+    {
+     "default": 30,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 5
+     },
+     "max": 30,
+     "min": 0,
+     "name": "Volume Control",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "step"
+    },
+    {
+     "default": 1,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 1
+     },
+     "max": 3,
+     "min": 0,
+     "name": "Rotation",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 256
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 1",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 257
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 2",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 258
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 3",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 259
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 4",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 260
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 5",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 261
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 6",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 262
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 7",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 263
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 8",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 264
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 9",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 265
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 10",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%.2f",
+     "id": {
+      "id": 268435470
+     },
+     "max": 1,
+     "min": -1,
+     "name": "Bass Shelf",
+     "stepSize": 0,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%.2f",
+     "id": {
+      "id": 268435471
+     },
+     "max": 1,
+     "min": -1,
+     "name": "Treble Shelf",
+     "stepSize": 0,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 268435477
+     },
+     "max": 1,
+     "min": 0,
+     "name": "WooferEQ",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_TOGGLE",
+     "unit": ""
+    }
+   ],
+   "rtCoreVersion": {
+    "majorVersion": 2,
+    "minorVersion": 1,
+    "patchVersion": 1
+   },
+   "signalChainMetaData": {
+    "bypass_gain_db": {
+     "stringValue": "0"
+    },
+    "bypass_gain_lin": {
+     "stringValue": "1"
+    },
+    "group_id": {
+     "stringValue": "0"
+    },
+    "output_type": {
+     "stringValue": "speaker"
+    },
+    "stream_type": {
+     "stringValue": "normal"
+    }
+   }
+  },
+  {
+   "name": "GAME_SS",
+   "numInputs": 2,
+   "numOutputs": 2,
+   "parameters": [
+    {
+     "default": 30,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 5
+     },
+     "max": 30,
+     "min": 0,
+     "name": "Volume Control",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "step"
+    },
+    {
+     "default": 1,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 1
+     },
+     "max": 3,
+     "min": 0,
+     "name": "Rotation",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 256
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 1",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 257
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 2",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 258
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 3",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 259
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 4",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 260
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 5",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 261
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 6",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 262
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 7",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 263
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 8",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 264
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 9",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 265
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 10",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%.2f",
+     "id": {
+      "id": 268435470
+     },
+     "max": 1,
+     "min": -1,
+     "name": "Bass Shelf",
+     "stepSize": 0,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%.2f",
+     "id": {
+      "id": 268435471
+     },
+     "max": 1,
+     "min": -1,
+     "name": "Treble Shelf",
+     "stepSize": 0,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 268435477
+     },
+     "max": 1,
+     "min": 0,
+     "name": "WooferEQ",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_TOGGLE",
+     "unit": ""
+    }
+   ],
+   "rtCoreVersion": {
+    "majorVersion": 2,
+    "minorVersion": 1,
+    "patchVersion": 1
+   },
+   "signalChainMetaData": {
+    "bypass_gain_db": {
+     "stringValue": "0"
+    },
+    "bypass_gain_lin": {
+     "stringValue": "1"
+    },
+    "group_id": {
+     "stringValue": "2"
+    },
+    "output_type": {
+     "stringValue": "speaker"
+    },
+    "stream_type": {
+     "stringValue": "system"
+    }
+   }
+  },
+  {
+   "name": "Earphone",
+   "numInputs": 2,
+   "numOutputs": 2,
+   "parameters": [
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 256
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 1",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 257
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 2",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 258
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 3",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 259
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 4",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 260
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 5",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 261
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 6",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 262
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 7",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 263
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 8",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 264
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 9",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 265
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 10",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%.2f",
+     "id": {
+      "id": 268435470
+     },
+     "max": 1,
+     "min": -1,
+     "name": "Bass Shelf",
+     "stepSize": 0,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%.2f",
+     "id": {
+      "id": 268435471
+     },
+     "max": 1,
+     "min": -1,
+     "name": "Treble Shelf",
+     "stepSize": 0,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 268435475
+     },
+     "max": 1,
+     "min": 0,
+     "name": "HD Sound Enable",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_TOGGLE",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "Music 0, Movie 1, Game 2",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 268435474
+     },
+     "max": 2,
+     "min": 0,
+     "name": "Earphone Modes",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 18
+     },
+     "max": 1,
+     "min": 0,
+     "name": "EN53302",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_TOGGLE",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 268435476
+     },
+     "max": 1,
+     "min": 0,
+     "name": "EN53302 Presets",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [
+      {
+       "name": "01_Cetra music 0417",
+       "value": 0
+      },
+      {
+       "name": "02_Asus Delta Music 0518",
+       "value": 1
+      },
+      {
+       "name": "03_Theta 7_1 music 0417",
+       "value": 2
+      },
+      {
+       "name": "04_STRIX GO _2_4G Music 0417",
+       "value": 3
+      },
+      {
+       "name": "05_STRIX_Pink_0715_music",
+       "value": 4
+      },
+      {
+       "name": "06_Theta electreat 0715_music",
+       "value": 5
+      },
+      {
+       "name": "07_Delta Core_3_5mm plug_20200818 music",
+       "value": 6
+      },
+      {
+       "name": "08_Cetra Core_inear_3_5mm plug_20200818 music",
+       "value": 7
+      },
+      {
+       "name": "09_ROG Cetra II (USB)_01_1202_1_music.hds",
+       "value": 8
+      },
+      {
+       "name": "10_ROG Cetra II Core (3_5mm)_1203_music",
+       "value": 9
+      },
+      {
+       "name": "11_ROG Cetra True Wireless 20211124.hds",
+       "value": 10
+      },
+      {
+       "name": "12_ROG R75 CETRA TWS PRO 20220601 BT FLOW.hds",
+       "value": 11
+      },
+      {
+       "name": "15_Kuba_DISCO_20220705d_EQ_DSP",
+       "value": 12
+      },
+      {
+       "name": "16_ROG_PELTA_BT_241121H8",
+       "value": 13
+      }
+     ],
+     "formatting": "%d",
+     "id": {
+      "id": 9
+     },
+     "max": 13,
+     "min": 0,
+     "name": "HD sound filters",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_ENUMERATION",
+     "unit": ""
+    }
+   ],
+   "rtCoreVersion": {
+    "majorVersion": 2,
+    "minorVersion": 1,
+    "patchVersion": 1
+   },
+   "signalChainMetaData": {
+    "OutputType": {
+     "stringValue": "headset"
+    },
+    "StreamType": {
+     "stringValue": "normal"
+    },
+    "bypass_gain_db": {
+     "stringValue": "0"
+    },
+    "bypass_gain_lin": {
+     "stringValue": "1"
+    },
+    "group_id": {
+     "stringValue": "1"
+    },
+    "sample_rate": {
+     "stringValue": "384000"
+    }
+   }
+  },
+  {
+   "name": "Earphone_SS",
+   "numInputs": 2,
+   "numOutputs": 2,
+   "parameters": [
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 256
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 1",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 257
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 2",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 258
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 3",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 259
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 4",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 260
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 5",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 261
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 6",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 262
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 7",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 263
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 8",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 264
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 9",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 265
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 10",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%.2f",
+     "id": {
+      "id": 268435470
+     },
+     "max": 1,
+     "min": -1,
+     "name": "Bass Shelf",
+     "stepSize": 0,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%.2f",
+     "id": {
+      "id": 268435471
+     },
+     "max": 1,
+     "min": -1,
+     "name": "Treble Shelf",
+     "stepSize": 0,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 268435475
+     },
+     "max": 1,
+     "min": 0,
+     "name": "HD Sound Enable",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_TOGGLE",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "Music 0, Movie 1, Game 2",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 268435474
+     },
+     "max": 2,
+     "min": 0,
+     "name": "Earphone Modes",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 18
+     },
+     "max": 1,
+     "min": 0,
+     "name": "EN53302",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_TOGGLE",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 268435476
+     },
+     "max": 1,
+     "min": 0,
+     "name": "EN53302 Presets",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [
+      {
+       "name": "01_Cetra music 0417",
+       "value": 0
+      },
+      {
+       "name": "02_Asus Delta Music 0518",
+       "value": 1
+      },
+      {
+       "name": "03_Theta 7_1 music 0417",
+       "value": 2
+      },
+      {
+       "name": "04_STRIX GO _2_4G Music 0417",
+       "value": 3
+      },
+      {
+       "name": "05_STRIX_Pink_0715_music",
+       "value": 4
+      },
+      {
+       "name": "06_Theta electreat 0715_music",
+       "value": 5
+      },
+      {
+       "name": "07_Delta Core_3_5mm plug_20200818 music",
+       "value": 6
+      },
+      {
+       "name": "08_Cetra Core_inear_3_5mm plug_20200818 music",
+       "value": 7
+      },
+      {
+       "name": "09_ROG Cetra II (USB)_01_1202_1_music.hds",
+       "value": 8
+      },
+      {
+       "name": "10_ROG Cetra II Core (3_5mm)_1203_music",
+       "value": 9
+      },
+      {
+       "name": "11_ROG Cetra True Wireless 20211124.hds",
+       "value": 10
+      },
+      {
+       "name": "12_ROG R75 CETRA TWS PRO 20220601 BT FLOW.hds",
+       "value": 11
+      },
+      {
+       "name": "15_Kuba_DISCO_20220705d_EQ_DSP",
+       "value": 12
+      },
+      {
+       "name": "16_ROG_PELTA_BT_241121H8",
+       "value": 13
+      }
+     ],
+     "formatting": "%d",
+     "id": {
+      "id": 9
+     },
+     "max": 13,
+     "min": 0,
+     "name": "HD sound filters",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_ENUMERATION",
+     "unit": ""
+    }
+   ],
+   "rtCoreVersion": {
+    "majorVersion": 2,
+    "minorVersion": 1,
+    "patchVersion": 1
+   },
+   "signalChainMetaData": {
+    "OutputType": {
+     "stringValue": "headset"
+    },
+    "StreamType": {
+     "stringValue": "system"
+    },
+    "bypass_gain_db": {
+     "stringValue": "0"
+    },
+    "bypass_gain_lin": {
+     "stringValue": "1"
+    },
+    "group_id": {
+     "stringValue": "3"
+    },
+    "sample_rate": {
+     "stringValue": "384000"
+    }
+   }
+  },
+  {
+   "name": "OPTEO_VIRTUO",
+   "numInputs": 2,
+   "numOutputs": 2,
+   "parameters": [
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 256
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 1",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 257
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 2",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 258
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 3",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 259
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 4",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 260
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 5",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 261
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 6",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 262
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 7",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 263
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 8",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 264
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 9",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 265
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 10",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%.2f",
+     "id": {
+      "id": 268435470
+     },
+     "max": 1,
+     "min": -1,
+     "name": "Bass Shelf",
+     "stepSize": 0,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%.2f",
+     "id": {
+      "id": 268435471
+     },
+     "max": 1,
+     "min": -1,
+     "name": "Treble Shelf",
+     "stepSize": 0,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 268435475
+     },
+     "max": 1,
+     "min": 0,
+     "name": "HD Sound Enable",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_TOGGLE",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 18
+     },
+     "max": 1,
+     "min": 0,
+     "name": "EN53302",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_TOGGLE",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 268435476
+     },
+     "max": 1,
+     "min": 0,
+     "name": "EN53302 Presets",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [
+      {
+       "name": "01_Cetra music 0417",
+       "value": 0
+      },
+      {
+       "name": "02_Asus Delta Music 0518",
+       "value": 1
+      },
+      {
+       "name": "03_Theta 7_1 music 0417",
+       "value": 2
+      },
+      {
+       "name": "04_STRIX GO _2_4G Music 0417",
+       "value": 3
+      },
+      {
+       "name": "05_STRIX_Pink_0715_music",
+       "value": 4
+      },
+      {
+       "name": "06_Theta electreat 0715_music",
+       "value": 5
+      },
+      {
+       "name": "07_Delta Core_3_5mm plug_20200818 music",
+       "value": 6
+      },
+      {
+       "name": "08_Cetra Core_inear_3_5mm plug_20200818 music",
+       "value": 7
+      },
+      {
+       "name": "09_ROG Cetra II (USB)_01_1202_1_music.hds",
+       "value": 8
+      },
+      {
+       "name": "10_ROG Cetra II Core (3_5mm)_1203_music",
+       "value": 9
+      },
+      {
+       "name": "11_ROG Cetra True Wireless 20211124.hds",
+       "value": 10
+      },
+      {
+       "name": "12_ROG R75 CETRA TWS PRO 20220601 BT FLOW.hds",
+       "value": 11
+      },
+      {
+       "name": "15_Kuba_DISCO_20220705d_EQ_DSP",
+       "value": 12
+      },
+      {
+       "name": "16_ROG_PELTA_BT_241121H8",
+       "value": 13
+      }
+     ],
+     "formatting": "%d",
+     "id": {
+      "id": 9
+     },
+     "max": 13,
+     "min": 0,
+     "name": "HD sound filters",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_ENUMERATION",
+     "unit": ""
+    }
+   ],
+   "rtCoreVersion": {
+    "majorVersion": 2,
+    "minorVersion": 1,
+    "patchVersion": 1
+   },
+   "signalChainMetaData": {
+    "OutputType": {
+     "stringValue": "headset"
+    },
+    "StreamType": {
+     "stringValue": "normal"
+    },
+    "bypass_gain_db": {
+     "stringValue": "0"
+    },
+    "bypass_gain_lin": {
+     "stringValue": "1"
+    },
+    "group_id": {
+     "stringValue": "1"
+    },
+    "sample_rate": {
+     "stringValue": "384000"
+    }
+   }
+  },
+  {
+   "name": "OPTEO_VIRTUO_SS",
+   "numInputs": 2,
+   "numOutputs": 2,
+   "parameters": [
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 256
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 1",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 257
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 2",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 258
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 3",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 259
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 4",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 260
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 5",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 261
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 6",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 262
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 7",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 263
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 8",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 264
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 9",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 265
+     },
+     "max": 6,
+     "min": -6,
+     "name": "EQ 10",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": "dB"
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%.2f",
+     "id": {
+      "id": 268435470
+     },
+     "max": 1,
+     "min": -1,
+     "name": "Bass Shelf",
+     "stepSize": 0,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%.2f",
+     "id": {
+      "id": 268435471
+     },
+     "max": 1,
+     "min": -1,
+     "name": "Treble Shelf",
+     "stepSize": 0,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 268435475
+     },
+     "max": 1,
+     "min": 0,
+     "name": "HD Sound Enable",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_TOGGLE",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 18
+     },
+     "max": 1,
+     "min": 0,
+     "name": "EN53302",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_TOGGLE",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [],
+     "formatting": "%d",
+     "id": {
+      "id": 268435476
+     },
+     "max": 1,
+     "min": 0,
+     "name": "EN53302 Presets",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_LINEAR",
+     "unit": ""
+    },
+    {
+     "default": 0,
+     "description": "",
+     "enumValues": [
+      {
+       "name": "01_Cetra music 0417",
+       "value": 0
+      },
+      {
+       "name": "02_Asus Delta Music 0518",
+       "value": 1
+      },
+      {
+       "name": "03_Theta 7_1 music 0417",
+       "value": 2
+      },
+      {
+       "name": "04_STRIX GO _2_4G Music 0417",
+       "value": 3
+      },
+      {
+       "name": "05_STRIX_Pink_0715_music",
+       "value": 4
+      },
+      {
+       "name": "06_Theta electreat 0715_music",
+       "value": 5
+      },
+      {
+       "name": "07_Delta Core_3_5mm plug_20200818 music",
+       "value": 6
+      },
+      {
+       "name": "08_Cetra Core_inear_3_5mm plug_20200818 music",
+       "value": 7
+      },
+      {
+       "name": "09_ROG Cetra II (USB)_01_1202_1_music.hds",
+       "value": 8
+      },
+      {
+       "name": "10_ROG Cetra II Core (3_5mm)_1203_music",
+       "value": 9
+      },
+      {
+       "name": "11_ROG Cetra True Wireless 20211124.hds",
+       "value": 10
+      },
+      {
+       "name": "12_ROG R75 CETRA TWS PRO 20220601 BT FLOW.hds",
+       "value": 11
+      },
+      {
+       "name": "15_Kuba_DISCO_20220705d_EQ_DSP",
+       "value": 12
+      },
+      {
+       "name": "16_ROG_PELTA_BT_241121H8",
+       "value": 13
+      }
+     ],
+     "formatting": "%d",
+     "id": {
+      "id": 9
+     },
+     "max": 13,
+     "min": 0,
+     "name": "HD sound filters",
+     "stepSize": 1,
+     "type": "PARAM_TYPE_ENUMERATION",
+     "unit": ""
+    }
+   ],
+   "rtCoreVersion": {
+    "majorVersion": 2,
+    "minorVersion": 1,
+    "patchVersion": 1
+   },
+   "signalChainMetaData": {
+    "OutputType": {
+     "stringValue": "headset"
+    },
+    "StreamType": {
+     "stringValue": "system"
+    },
+    "bypass_gain_db": {
+     "stringValue": "0"
+    },
+    "bypass_gain_lin": {
+     "stringValue": "1"
+    },
+    "group_id": {
+     "stringValue": "3"
+    },
+    "sample_rate": {
+     "stringValue": "384000"
+    }
+   }
+  }
+ ],
+ "creationTime": "2024-12-17T10:13:07Z",
+ "creator": "Flow 4.6.0",
+ "creatorVersion": {
+  "majorVersion": 4,
+  "minorVersion": 6,
+  "patchVersion": 0
+ },
+ "description": "PELTA1121H8",
+ "interfaceVersion": {
+  "majorVersion": 1,
+  "minorVersion": 1,
+  "patchVersion": 0
+ },
+ "manufacturer": "Asus",
+ "processorLibraryVersion": {
+  "majorVersion": 5,
+  "minorVersion": 3,
+  "patchVersion": 0
+ },
+ "project": "Zenfone 12",
+ "uuid": "3a3b51a8-9c07-43fa-bf05-199770127f3a"
+}

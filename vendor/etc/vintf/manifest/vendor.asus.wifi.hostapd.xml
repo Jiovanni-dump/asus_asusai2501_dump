@@ -1,0 +1,11 @@
+<!--
+    Input:
+        vendor/asus/wifi/interfaces/aidl/vintf/vendor.asus.wifi.hostapd.xml
+-->
+<manifest version="8.0" type="device">
+    <hal format="aidl">
+        <name>vendor.asus.wifi.hostapd</name>
+        <version>2</version>
+        <fqname>IAsusHostapd/default</fqname>
+    </hal>
+</manifest>

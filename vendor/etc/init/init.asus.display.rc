@@ -1,0 +1,37 @@
+on post-fs-data
+    chmod 0666 /sys/class/asus_fod/hdr_mode
+    chmod 0666 /sys/class/asus_fod/fod_touched
+    chmod 0666 /sys/class/asus_fod_touch/fod_touched
+    chmod 0444 /sys/class/asus_fod/ghbm_on_requested
+    chmod 0444 /sys/class/asus_fod/ghbm_on_achieved
+    chmod 0444 /sys/class/asus_fod/spot_on_achieved
+    chmod 0666 /sys/class/asus_fod/hbm_mode
+    chmod 0666 /sys/class/asus_fod/panel_clk
+    chmod 0666 /sys/class/asus_fod/aod_fps
+    chmod 0222 /sys/class/asus_fod/send_dcs_cmd
+    chmod 0666 /sys/class/asus_fod/print_dcs_cmd
+    chmod 0666 /sys/class/asus_fod/video_mode
+    chmod 0666 /sys/class/asus_fod/sdr_dimming
+    chmod 0666 /sys/class/asus_fod/park_level
+    chmod 0666 /sys/class/asus_fod/hop_is_game
+    chmod 0666 /sys/class/asus_fod/ltpo_idle
+    setprop vendor.asus.displayrc 1
+
+on charger
+    write /sys/class/asus_fod/charger_mode 1
+
+on property:debug.sf.disable_hop_mode=*
+    setprop persist.vendor.disable_hop_mode ${debug.sf.disable_hop_mode}
+
+on property:vendor.asus.wlan.5Gband=*
+    write /sys/class/asus_fod/wifi_5g_in_use ${vendor.asus.wlan.5Gband}
+
+on property:vendor.asus.gamingtype=*
+    write /sys/class/asus_fod/hop_is_game ${vendor.asus.gamingtype}
+    setprop debug.sf.acg ${vendor.asus.gamingtype}
+
+on property:debug.sf.bl_conv_formula=*
+    setprop persist.vendor.display.bl_formula ${debug.sf.bl_conv_formula}
+
+on property:debug.sf.bl_conv_log=*
+    setprop persist.vendor.display.bl_log ${debug.sf.bl_conv_log}

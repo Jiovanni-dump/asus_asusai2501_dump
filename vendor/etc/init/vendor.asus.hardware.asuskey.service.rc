@@ -1,0 +1,4 @@
+service asuskey_service /vendor/bin/hw/vendor.asus.hardware.asuskey.service
+    class hal
+    user system
+    group system

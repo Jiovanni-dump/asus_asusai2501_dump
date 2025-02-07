@@ -1,0 +1,4 @@
+service vendor.asus.network.sla-service /vendor/bin/hw/vendor.asus.network.sla-service
+    class hal
+    user system
+    group system

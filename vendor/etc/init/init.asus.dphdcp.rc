@@ -1,0 +1,24 @@
+# ASUS BSP Display +++
+service vendor.hdcp /vendor/bin/sh /vendor/bin/is_hdcp_valid.sh
+    class late_start
+    user root
+    group root media mediadrm drmrpc system log
+    disabled
+    seclabel u:r:hdcp_key_install:s0
+    oneshot
+
+on property:sys.boot_completed=1
+    start vendor.hdcp
+
+on property:sys.debug.hdcp=0
+    setprop vendor.debug.hdcp 0
+
+on property:sys.debug.hdcp=1
+    setprop vendor.debug.hdcp 1
+
+on property:vendor.debug.hdcp=1
+    write /proc/driver/hdcp_disable 0
+
+on property:vendor.debug.hdcp=0
+    write /proc/driver/hdcp_disable 1
+# ASUS BSP Display ---

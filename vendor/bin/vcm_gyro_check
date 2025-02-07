@@ -1,0 +1,43 @@
+#!/system/bin/sh
+#ASUS_BSP code in asus_actuator.c
+#if x y gyro read 0x0000 or 0x8000, vcm read gyro error
+
+vcm_enable=`cat /proc/driver/vcm_enable`
+
+i=0
+if [ ${vcm_enable} -eq "1" ]; then
+
+
+	vcm_X_1=`echo 0x48 > /proc/driver/vcm_ic_rw; cat /proc/driver/vcm_ic_rw`
+
+	#echo $vcm_X_1
+	#echo ${vcm_X_1:15:18}
+	vcm_X_2=`echo 0x49 > /proc/driver/vcm_ic_rw; cat /proc/driver/vcm_ic_rw`
+	#echo $vcm_X_2
+	#echo ${vcm_X_2:15:18}
+
+
+	vcm_Y_1=`echo 0x4A > /proc/driver/vcm_ic_rw; cat /proc/driver/vcm_ic_rw`
+	#echo $vcm_Y_1
+	#echo ${vcm_Y_1:15:18}
+	vcm_Y_2=`echo 0x4B > /proc/driver/vcm_ic_rw; cat /proc/driver/vcm_ic_rw`
+	#echo $vcm_Y_2
+	#echo ${vcm_Y_2:15:18}
+
+
+	if [ ${vcm_X_1:15:18} == "0x80" ] && [ ${vcm_X_2:15:18} == "0x0" ]; then
+		if [ ${vcm_Y_1:15:18} == "0x80" ] && [ ${vcm_Y_2:15:18} == "0x0" ]; then
+		echo "0"
+		fi
+	elif [ ${vcm_X_1:15:18} == "0x0" ] && [ ${vcm_X_2:15:18} == "0x0" ]; then
+		if [ ${vcm_Y_1:15:18} == "0x0" ] && [ ${vcm_Y_2:15:18} == "0x0" ]; then
+		echo "0"
+		fi
+	else
+		echo "1"
+	fi
+
+else
+	echo "vcm not enable"
+fi
+

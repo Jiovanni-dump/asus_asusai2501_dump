@@ -1,0 +1,61 @@
+service vendor.ins_akey /vendor/bin/install_akey_server
+    class late_start
+    user root
+    group root media mediadrm drmrpc system log
+    seclabel u:r:install_key_server:s0
+    disabled
+
+service asuskey_install_tool /vendor/bin/asuskey_install_tool.sh
+    class late_start
+    user root
+    group root media mediadrm drmrpc system log
+    seclabel u:r:install_key_server:s0
+    disabled
+
+service check_akey_prop /vendor/bin/sh /vendor/bin/check_vendor_key.sh
+    class late_start
+    user root
+    group root media mediadrm drmrpc system log
+    disabled
+    seclabel u:r:install_key_server:s0
+    oneshot
+
+service vendor.read_deviceid /vendor/bin/sh /vendor/bin/read_device_ssn.sh ${ro.serialno}
+    class late_start
+    user root
+    group root
+    disabled
+    seclabel u:r:install_key_server:s0
+    oneshot
+service vendor.reins_key_system /vendor/bin/KmInstallKeybox /vendor/factory/device_id.xml auto true rkp ${ro.serialno}
+    class late_start
+    user root
+    group root media mediadrm drmrpc system log
+    seclabel u:r:install_key_server:s0
+    oneshot
+    disabled
+    
+on property:vendor.atd.start.key.install=1
+    start vendor.ins_akey
+
+    
+on property:sys.boot_completed=1
+    start check_akey_prop
+    setprop avf.remote_attestation.enabled 0
+
+on property:vendor.asus.get.deviceid.status=1
+    start vendor.read_deviceid
+
+#on property:vendor.asus.system.get.deviceid.num=*
+#    start vendor.read_deviceid
+
+on property:vendor.asus.system.get.deviceid.status=1
+    setprop vendor.asus.get.deviceid.status 1
+
+on property:vendor.asus.system.start.key.reinstall=1
+    start vendor.reins_key_system
+
+on property:vendor.asus.check_trigger=1
+    start asus_check_key_after
+
+

@@ -1,0 +1,4 @@
+service vendor.asus.network.rttutil-service /vendor/bin/hw/vendor.asus.network.rttutil-service
+    class hal
+    user system
+    group system

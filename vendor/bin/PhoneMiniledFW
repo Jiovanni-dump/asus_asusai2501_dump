@@ -1,0 +1,5 @@
+#!/vendor/bin/sh
+
+fw_ver=`cat /sys/class/leds/miniled/FW_Ver`
+
+echo "$fw_ver"

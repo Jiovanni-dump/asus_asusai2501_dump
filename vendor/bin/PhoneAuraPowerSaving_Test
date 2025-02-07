@@ -1,0 +1,36 @@
+#!/vendor/bin/sh
+
+hwid=`getprop ro.boot.id.stage`
+pjid=`getprop ro.boot.id.prj`
+
+if [ "${pjid}" != "1" ]; then
+	echo "0x8030 01" >  /sys/class/leds/aura_sync/write_to_reg
+	FW_VER=`cat /sys/class/leds/aura_sync/fw_ver`
+	if [ "${FW_VER}" == "i2c_error" ]; then
+		echo 1 > /sys/class/leds/aura_sync/WAKEUP
+		sleep 0.5
+		echo 0 > /sys/class/leds/aura_sync/WAKEUP
+		sleep 0.5
+		FW_VER=`cat /sys/class/leds/aura_sync/fw_ver`
+		if [ "${FW_VER}" != "i2c_error" ]; then
+			echo 1
+		else
+			echo 0
+		fi
+	fi
+else
+	echo "0x8030 01" >  /sys/class/leds/miniled/write_to_reg
+	FW_VER=`cat /sys/class/leds/miniled/fw_ver`
+	if [ "${FW_VER}" == "i2c_error" ]; then
+		echo 1 > /sys/class/leds/miniled/WAKEUP
+		sleep 0.5
+		echo 0 > /sys/class/leds/miniled/WAKEUP
+		sleep 0.5
+		FW_VER=`cat /sys/class/leds/miniled/fw_ver`
+		if [ "${FW_VER}" != "i2c_error" ]; then
+			echo 1
+		else
+			echo 0
+		fi
+	fi
+fi

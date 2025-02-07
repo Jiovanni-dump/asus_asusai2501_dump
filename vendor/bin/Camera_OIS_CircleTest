@@ -1,0 +1,65 @@
+INDEX="/proc/driver/ois_index"
+
+#!/system/bin/sh
+#X_Radius Y_Radius X_Accuracy Y_Accuracy Deg_Step Wait0 Wait1 Wait2
+debug=0
+value=0
+
+function getGG100() {
+echo "$1" 2 > /proc/driver/ois_i2c_rw
+local GGreg=$(cat /proc/driver/ois_i2c_rw)
+#echo "[$1]=$GGreg"
+printf "%d", "0x$GGreg"  | awk '{print int($1*3000/8192)}'
+}
+
+function doCircleTest() {
+XGG100=$(getGG100 7182)
+YGG100=$(getGG100 7183)
+RX10=$(echo "$1*10" | bc | awk -F . '{print $1}')
+RY10=$(echo "$2*10" | bc | awk -F . '{print $1}')
+Xdiff10=$(echo "$3*10" | bc | awk -F . '{print $1}')
+Ydiff10=$(echo "$4*10" | bc | awk -F . '{print $1}')
+echo "echo '88 $XGG100 $YGG100 $RX10 $RY10 $Xdiff10 $Xdiff10 $5 $6 $7 $8' > /proc/driver/ois_cali"
+echo "88 $XGG100 $YGG100 $RX10 $RY10 $Xdiff10 $Xdiff10 $5 $6 $7 $8" > /proc/driver/ois_cali
+
+
+}
+
+
+
+if [ -z "$8" ]; then
+
+#  if [ ! -z "$5" ] && [ -z "$6" ]; then
+#    
+#  else
+#  fi
+    echo "Camera_OIS_CircleTest X_Radius Y_Radius X_Accuracy Y_Accuracy Deg_Step Wait0 Wait1 Wait2"
+else
+
+	oisindex=$(cat $INDEX)
+if [ $oisindex -eq 0 ]
+then
+    setprop vendor.debug.camera.ois.cycle_test.radius $1
+    setprop vendor.debug.camera.ois.cycle_test.accuracy $3
+    setprop vendor.debug.camera.ois.cycle_test.angle $5
+    setprop vendor.debug.camera.ois.cycle_test.wait0 $6
+    setprop vendor.debug.camera.ois.cycle_test.wait1 $7
+    setprop vendor.debug.camera.ois.cycle_test 1
+    delay=$((($6+$7*360/$5+1000)/1000))
+#    echo "delay $delay(s)"
+    sleep $delay
+    
+    cp -f /data/vendor/camera/OIS_CircleTest.txt /sdcard/OIS_CircleTest.txt
+else
+  doCircleTest $1 $2 $3 $4 $5 $6 $7 $8
+  iTFOKT=0
+	cat /proc/driver/ois_cali > /sdcard/OIS_CircleTest.txt
+fi  
+
+	NPCount=$( cat /sdcard/OIS_CircleTest.txt | tail -n 1 )
+	if [ -z "$NPCount" ] || [ $NPCount -ne 0 ]; then
+		echo "0"
+	else
+		echo "1"
+	fi
+fi

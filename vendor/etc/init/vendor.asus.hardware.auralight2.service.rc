@@ -1,0 +1,4 @@
+service vendor.asus.auralight2 /vendor/bin/hw/vendor.asus.hardware.auralight2.service
+    class hal
+    user system
+    group system

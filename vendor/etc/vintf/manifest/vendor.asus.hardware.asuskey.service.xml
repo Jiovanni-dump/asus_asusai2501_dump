@@ -1,0 +1,10 @@
+<!--
+    Input:
+        vendor/asus/AI2501/asuskey/interfaces/asuskey/default/vendor.asus.hardware.asuskey.service.xml
+-->
+<manifest version="8.0" type="device">
+    <hal format="aidl">
+        <name>vendor.asus.hardware.asuskey</name>
+        <fqname>IAsuskey/default</fqname>
+    </hal>
+</manifest>

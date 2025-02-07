@@ -1,0 +1,16 @@
+nfcId=$(getprop ro.boot.id.nfc)
+param1=$1
+
+if [ "$nfcId" = "0" ] && [ "$param1" = "1" ]; then
+    /vendor/bin/stfactorydemo-vendor 1
+elif [ "$nfcId" = "0" ] && [ "$param1" = "2" ]; then
+    /vendor/bin/stfactorydemo-vendor 2
+elif [ "$nfcId" = "2" ] || [ "$nfcId" = "3" ] || [ "$nfcId" = "4" ]; then
+    if [ "$param1" = "1" ]; then
+        /vendor/bin/ncitest_nxp 1
+    elif [ "$param1" = "2" ]; then
+        /vendor/bin/ncitest_nxp 2
+    fi
+else
+    echo "Get nfc id fail or invalid parameter."
+fi

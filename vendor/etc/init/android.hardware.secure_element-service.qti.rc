@@ -1,0 +1,1 @@
+import /vendor/etc/init.asus.ese.${ro.boot.id.nfc}.rc

@@ -1,0 +1,10 @@
+<!--
+    Input:
+        vendor/asus/AI2501/aw_haptic/aidl/default/vendor.asus.hardware.vibratorctl.service.xml
+-->
+<manifest version="8.0" type="device">
+    <hal format="aidl">
+        <name>vendor.asus.hardware.vibratorctl</name>
+        <fqname>IVibratorctl/default</fqname>
+    </hal>
+</manifest>

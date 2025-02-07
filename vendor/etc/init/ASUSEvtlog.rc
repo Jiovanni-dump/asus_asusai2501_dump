@@ -1,0 +1,8 @@
+on post-fs-data
+    start ASUSEvtlog
+
+service ASUSEvtlog /vendor/bin/ASUSEvtlog
+    user root
+    group root logd system media_rw
+    writepid /dev/cpuset/system-background/tasks
+    seclabel u:r:savelogmtp:s0

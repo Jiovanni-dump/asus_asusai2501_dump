@@ -1,0 +1,10 @@
+<!--
+    Input:
+        vendor/asus/AsusNetworkServices/hardware/interfaces/rttutil/aidl/default/hal/vendor.asus.network.rttutil.xml
+-->
+<manifest version="8.0" type="device">
+    <hal format="aidl">
+        <name>vendor.asus.network.rttutil</name>
+        <fqname>INetworkRttUtil/default</fqname>
+    </hal>
+</manifest>
