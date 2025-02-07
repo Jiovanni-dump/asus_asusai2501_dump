@@ -1,0 +1,15 @@
+<!--
+    Input:
+        vendor/asus/AI2501/nfc/manifest/manifest_nxp.xml
+        vendor/asus/AI2501/ese/manifest/manifest_eSE.xml
+-->
+<manifest version="8.0" type="device">
+    <hal format="aidl">
+        <name>android.hardware.secure_element</name>
+        <fqname>ISecureElement/eSE1</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.nxp.nxpnfc_aidl</name>
+        <fqname>INxpNfc/default</fqname>
+    </hal>
+</manifest>
